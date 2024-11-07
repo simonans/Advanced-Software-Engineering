@@ -8,5 +8,5 @@ using WpfApp_PIC.Domänenschicht;
 namespace WpfApp_PIC.Anwendungsschicht.Parser;
 public interface IParser
 {
-    public void ReadLstFile(string filePath, ProgramMemory programmspeicher);
+    public void ReadFile(string filePath, ProgramMemory programmspeicher);
 }

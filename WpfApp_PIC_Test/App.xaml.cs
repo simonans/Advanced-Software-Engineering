@@ -15,7 +15,10 @@ namespace WpfApp_PIC
          
             base.OnStartup(e);
 
+            string filePath = "lalelu";
+
             // Initialisierung
+            var pic = new PIC(filePath);
             var dataRegister = new DataRegister();
             var dataRegisterService = new DataRegisterService(dataRegister);
             var viewModel = new DataRegisterViewModel(dataRegisterService);

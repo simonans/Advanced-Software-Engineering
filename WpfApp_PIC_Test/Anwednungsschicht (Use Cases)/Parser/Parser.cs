@@ -3,17 +3,17 @@ using WpfApp_PIC.Domänenschicht;
 using WpfApp_PIC.Pluginschicht.LST_File_Reader;
 
 namespace WpfApp_PIC.Adapterschicht.Parser;
-public class Parser : IParser
+public class Parser
 {
-    private readonly ILST_File_Reader _reader;
-    public Parser(ILST_File_Reader reader)
+    private readonly IParser _reader;
+    public Parser(IParser reader)
     {
         _reader = reader;
     }
 
     public void ReadLstFile(string filePath, ProgramMemory programmspeicher)
     {
-        _reader.ReadLstFile(filePath, programmspeicher);
+        _reader.ReadFile(filePath, programmspeicher);
     }
 
 

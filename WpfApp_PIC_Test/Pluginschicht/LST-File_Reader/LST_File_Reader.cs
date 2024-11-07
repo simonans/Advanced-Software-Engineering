@@ -11,12 +11,12 @@ using WpfApp_PIC.Domänenschicht;
 namespace WpfApp_PIC.Pluginschicht.LST_File_Reader
 {
 
-    public class LST_File_Reader : ILST_File_Reader
+    public class LST_File_Reader : IParser
     {
 
         public LST_File_Reader() { }
 
-        public void ReadLstFile(string filePath, ProgramMemory programmspeicher)
+        public void ReadFile(string filePath, ProgramMemory programmspeicher)
         {
             if (File.Exists(filePath))
             {
