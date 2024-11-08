@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Mario\\.nuget\\packages\\": {}
+    "C:\\Users\\siman\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
+      "projectUniqueName": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
       "projectName": "WpfApp_PIC",
-      "projectPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
-      "packagesPath": "C:\\Users\\Mario\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\obj\\",
+      "projectPath": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
+      "packagesPath": "C:\\Users\\siman\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\siman\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +28,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -70,7 +69,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

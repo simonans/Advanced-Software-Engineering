@@ -1,62 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\",
+  "WorkspaceRootPath": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht - datenmodel\\datenspeicher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht - datenmodel\\datenspeicher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:dom\u00E4nenschicht - datenmodel\\datenspeicher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht - datenmodel\\programmspeicher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:dom\u00E4nenschicht - datenmodel\\programmspeicher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht - datenmodel\\programmz\u00E4hler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:dom\u00E4nenschicht - datenmodel\\programmz\u00E4hler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\pluginschicht\\lst-file_reader\\lst_file_reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:pluginschicht\\lst-file_reader\\lst_file_reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht (use cases)\\pic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht (use cases)\\pic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht (use cases)\\parser\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht (use cases)\\parser\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht (use cases)\\parser\\iparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht (use cases)\\parser\\iparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht (use cases)\\dataregisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht (use cases)\\dataregisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht (use cases)\\idataregisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht (use cases)\\idataregisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\pluginschicht\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:pluginschicht\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht - datenmodel\\w-register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht - datenmodel\\w-register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:dom\u00E4nenschicht - datenmodel\\w-register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht - datenmodel\\stack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht - datenmodel\\stack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:dom\u00E4nenschicht - datenmodel\\stack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\adapterschicht\\viewmodel\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:adapterschicht\\viewmodel\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht - datenmodel\\programmspeicher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:dom\u00E4nenschicht - datenmodel\\programmspeicher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\pluginschicht\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:pluginschicht\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht (use cases)\\parser\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht (use cases)\\parser\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht (use cases)\\parser\\iparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht (use cases)\\parser\\iparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\pluginschicht\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:pluginschicht\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\pluginschicht\\lst-file_reader\\lst_file_reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:pluginschicht\\lst-file_reader\\lst_file_reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|c:\\users\\siman\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht (use cases)\\pic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht (use cases)\\pic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,99 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 223,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Programmspeicher.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Programmspeicher.cs",
-              "RelativeDocumentMoniker": "Dom\u00E4nenschicht - Datenmodel\\Programmspeicher.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Programmspeicher.cs",
-              "RelativeToolTip": "Dom\u00E4nenschicht - Datenmodel\\Programmspeicher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T19:58:29.063Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ViewModelBase.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Adapterschicht\\ViewModel\\ViewModelBase.cs",
-              "RelativeDocumentMoniker": "Adapterschicht\\ViewModel\\ViewModelBase.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Adapterschicht\\ViewModel\\ViewModelBase.cs",
-              "RelativeToolTip": "Adapterschicht\\ViewModel\\ViewModelBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T19:39:06.455Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\View\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Pluginschicht\\View\\MainWindow.xaml",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\View\\MainWindow.xaml",
-              "RelativeToolTip": "Pluginschicht\\View\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-06T19:38:36.595Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IDataRegisterService.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\IDataRegisterService.cs",
-              "RelativeDocumentMoniker": "Anwednungsschicht (Use Cases)\\IDataRegisterService.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\IDataRegisterService.cs",
-              "RelativeToolTip": "Anwednungsschicht (Use Cases)\\IDataRegisterService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T16:49:43.286Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DataRegisterService.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\DataRegisterService.cs",
-              "RelativeDocumentMoniker": "Anwednungsschicht (Use Cases)\\DataRegisterService.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\DataRegisterService.cs",
-              "RelativeToolTip": "Anwednungsschicht (Use Cases)\\DataRegisterService.cs",
-              "ViewState": "AgIAAAgAAABgZmZmZmYkwAsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T16:48:28.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAAIAAACAMzMzMzMrwA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T19:02:16.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "W-Register.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\W-Register.cs",
-              "RelativeDocumentMoniker": "Dom\u00E4nenschicht - Datenmodel\\W-Register.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\W-Register.cs",
-              "RelativeToolTip": "Dom\u00E4nenschicht - Datenmodel\\W-Register.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T20:13:27.242Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 177,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -166,49 +58,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LST_File_Reader.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\LST-File_Reader\\LST_File_Reader.cs",
-              "RelativeDocumentMoniker": "Pluginschicht\\LST-File_Reader\\LST_File_Reader.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\LST-File_Reader\\LST_File_Reader.cs",
-              "RelativeToolTip": "Pluginschicht\\LST-File_Reader\\LST_File_Reader.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAEgAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "W-Register.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\W-Register.cs",
+              "RelativeDocumentMoniker": "Dom\u00E4nenschicht - Datenmodel\\W-Register.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\W-Register.cs",
+              "RelativeToolTip": "Dom\u00E4nenschicht - Datenmodel\\W-Register.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T07:43:49.556Z",
+              "WhenOpened": "2024-11-08T16:36:04.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Programmspeicher.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Programmspeicher.cs",
+              "RelativeDocumentMoniker": "Dom\u00E4nenschicht - Datenmodel\\Programmspeicher.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Programmspeicher.cs",
+              "RelativeToolTip": "Dom\u00E4nenschicht - Datenmodel\\Programmspeicher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:34:07.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Programmz\u00E4hler.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Programmz\u00E4hler.cs",
+              "RelativeDocumentMoniker": "Dom\u00E4nenschicht - Datenmodel\\Programmz\u00E4hler.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Programmz\u00E4hler.cs",
+              "RelativeToolTip": "Dom\u00E4nenschicht - Datenmodel\\Programmz\u00E4hler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:00:59.053Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "IParser.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\Parser\\IParser.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\Parser\\IParser.cs",
               "RelativeDocumentMoniker": "Anwednungsschicht (Use Cases)\\Parser\\IParser.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\Parser\\IParser.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\Parser\\IParser.cs",
               "RelativeToolTip": "Anwednungsschicht (Use Cases)\\Parser\\IParser.cs",
-              "ViewState": "AgIAAAEAAAAgMzMzMzMdwAoAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAgMzMzMzMdwAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T07:23:21.526Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\View\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\View\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Pluginschicht\\View\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\View\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\View\\MainWindow.xaml.cs",
               "RelativeToolTip": "Pluginschicht\\View\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T21:43:08.996Z"
+              "WhenOpened": "2024-11-06T21:43:08.996Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Parser.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\Parser\\Parser.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\Parser\\Parser.cs",
               "RelativeDocumentMoniker": "Anwednungsschicht (Use Cases)\\Parser\\Parser.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\Parser\\Parser.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\Parser\\Parser.cs",
               "RelativeToolTip": "Anwednungsschicht (Use Cases)\\Parser\\Parser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -217,40 +136,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "PIC.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\PIC.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\PIC.cs",
               "RelativeDocumentMoniker": "Anwednungsschicht (Use Cases)\\PIC.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\PIC.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht (Use Cases)\\PIC.cs",
               "RelativeToolTip": "Anwednungsschicht (Use Cases)\\PIC.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAABIPRQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T20:39:14.927Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T20:39:14.927Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "Stack.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Stack.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Stack.cs",
               "RelativeDocumentMoniker": "Dom\u00E4nenschicht - Datenmodel\\Stack.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Stack.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Stack.cs",
               "RelativeToolTip": "Dom\u00E4nenschicht - Datenmodel\\Stack.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T20:21:14.645Z"
+              "WhenOpened": "2024-11-06T20:21:14.645Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Datenspeicher.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Datenspeicher.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Datenspeicher.cs",
               "RelativeDocumentMoniker": "Dom\u00E4nenschicht - Datenmodel\\Datenspeicher.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Datenspeicher.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht - Datenmodel\\Datenspeicher.cs",
               "RelativeToolTip": "Dom\u00E4nenschicht - Datenmodel\\Datenspeicher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAA0wGUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T16:47:47.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LST_File_Reader.cs",
+              "DocumentMoniker": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\LST-File_Reader\\LST_File_Reader.cs",
+              "RelativeDocumentMoniker": "Pluginschicht\\LST-File_Reader\\LST_File_Reader.cs",
+              "ToolTip": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Pluginschicht\\LST-File_Reader\\LST_File_Reader.cs",
+              "RelativeToolTip": "Pluginschicht\\LST-File_Reader\\LST_File_Reader.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAEgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T07:43:49.556Z",
               "EditorCaption": ""
             }
           ]
