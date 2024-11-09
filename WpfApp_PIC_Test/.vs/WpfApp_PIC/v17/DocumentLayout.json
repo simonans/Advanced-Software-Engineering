@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht\\datenspeicherservice\\dataregisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht\\datenspeicherservice\\idataregisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht\\datenspeicherservice\\idataregisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\adapterschicht\\viewmodel\\viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:adapterschicht\\viewmodel\\viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht\\datenspeicherservice\\idataregisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht\\datenspeicherservice\\idataregisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht\\pic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,12 +42,11 @@
               "RelativeToolTip": "Anwednungsschicht\\PIC.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAgvQAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T08:24:54.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T08:24:54.692Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ViewModel.cs",
               "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Adapterschicht\\ViewModel\\ViewModel.cs",
               "RelativeDocumentMoniker": "Adapterschicht\\ViewModel\\ViewModel.cs",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Dom\u00E4nenschicht\\Datenspeicher.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T17:29:18.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T17:29:18.112Z"
             }
           ]
         },
@@ -95,14 +93,14 @@
               "RelativeDocumentMoniker": "Anwednungsschicht\\DatenspeicherService\\DataRegisterService.cs",
               "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht\\DatenspeicherService\\DataRegisterService.cs",
               "RelativeToolTip": "Anwednungsschicht\\DatenspeicherService\\DataRegisterService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T08:39:05.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IDataRegisterService.cs",
               "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht\\DatenspeicherService\\IDataRegisterService.cs",
               "RelativeDocumentMoniker": "Anwednungsschicht\\DatenspeicherService\\IDataRegisterService.cs",
@@ -110,8 +108,7 @@
               "RelativeToolTip": "Anwednungsschicht\\DatenspeicherService\\IDataRegisterService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T17:29:27.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T17:29:27.54Z"
             }
           ]
         }
