@@ -9,20 +9,20 @@ using System.Windows;
 
 namespace WpfApp_PIC.Adapterschicht.View
 {
-    public class BooleanToVisibilityConverter : IValueConverter
+    public class StringToNullableIntConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is bool booleanValue)
-            {
-                return booleanValue ? Visibility.Visible : Visibility.Collapsed;
-            }
-            return Visibility.Collapsed;
+            return value?.ToString();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            if (int.TryParse(value as string, out int result))
+            {
+                return result;
+            }
+            return null; // Gibt null zurück, wenn die Eingabe ungültig oder leer ist
         }
     }
-}
+   }

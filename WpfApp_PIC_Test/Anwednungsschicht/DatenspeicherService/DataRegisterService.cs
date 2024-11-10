@@ -16,9 +16,14 @@ public class DataRegisterService : IDataRegisterService
         _dataRegister = dataRegister;
     }
 
-    public int[] GetRegisterValues()
+    public int[] GetAllBank0Values()
     {
-        return _dataRegister.GetRegisterValues();
+        return _dataRegister.GetBank0();
+    }
+
+    public int[] GetAllBank1Values()
+    {
+        return _dataRegister.GetBank1();
     }
 
     public int GetValue(int index)

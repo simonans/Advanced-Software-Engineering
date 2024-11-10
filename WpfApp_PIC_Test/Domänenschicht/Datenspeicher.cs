@@ -13,7 +13,7 @@ namespace WpfApp_PIC.Domänenschicht
 
         public DataRegister()
         {
-            _register = new int[255];
+            _register = new int[256];
             _bank1 = new int[10];
 
             //Startwerte:
@@ -82,11 +82,15 @@ namespace WpfApp_PIC.Domänenschicht
             return;
         }
 
-        public int[] GetRegisterValues()
+        public int[] GetBank0()
         {
             return _register;
         }
 
+        public int[] GetBank1()
+        {
+            return _bank1;
+        }
 
 
         #region private help functions

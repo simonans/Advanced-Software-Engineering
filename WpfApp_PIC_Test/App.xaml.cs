@@ -5,6 +5,7 @@ using WpfApp_PIC.Adapterschicht.ViewModel;
 using WpfApp_PIC.Pluginschicht.View;
 using System.ComponentModel;
 using Microsoft.Win32;
+using WpfApp_PIC.Anwednungsschicht.DatenspeicherService.StatusRegisterService;
 
 namespace WpfApp_PIC
 {
@@ -28,8 +29,8 @@ namespace WpfApp_PIC
             var pic = new PIC(filePath);
             var dataRegister = new DataRegister();
             var dataRegisterService = new DataRegisterService(dataRegister);
-            var viewModel = new DataRegisterViewModel(dataRegisterService);
-
+            var statusRegisterService = new StatusRegisterService(dataRegister);
+            var viewModel = new DataRegisterViewModel(dataRegisterService, statusRegisterService);
 
             var mainWindow = new MainWindow
             {

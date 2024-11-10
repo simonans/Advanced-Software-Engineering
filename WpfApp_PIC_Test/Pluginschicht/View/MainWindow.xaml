@@ -10,24 +10,25 @@
 
     
     <Window.Resources>
-        <converter:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <converter:StringToNullableIntConverter x:Key="StringToNullableIntConverter"/>
+        <converter:IntToStringConverter x:Key="IntToStringConverter"/>
     </Window.Resources>
 
 
     <StackPanel Margin="10">
-        <TextBlock Text="ZUM TESTEN VOM DATENSPEICHER -Den DATAbinding-Error wenn das TExtfeld leer ist, kann man ignorieren" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+        <TextBlock Text="ZUM TESTEN VOM DATENSPEICHER" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
 
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
             <!-- Index TextBlock und TextBox -->
             <TextBlock Text="Index" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
             <TextBox x:Name="IndexTextBox" Width="200" HorizontalAlignment="Left" Margin="0,0,10,10"
-             Text="{Binding RegisterIndex, UpdateSourceTrigger=PropertyChanged}" />
+             Text="{Binding RegisterIndex,  Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- Wert TextBlock und TextBox -->
             <TextBlock Text="Wert" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
             <TextBox x:Name="ValueTextBox" Width="200" HorizontalAlignment="Left" Margin="0,0,10,10"
-             Text="{Binding RegisterValue, UpdateSourceTrigger=PropertyChanged}" />
+             Text="{Binding RegisterValue, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- Button zum Übermitteln der Eingabe -->
             <Button Content="Update Register" Width="150" Margin="0,0,0,10" HorizontalAlignment="Left"
@@ -36,10 +37,10 @@
 
 
         <!-- Anzeigen der Registerwerte -->
-        <ListView ItemsSource="{Binding RegisterValues}" HorizontalAlignment="Stretch" Height="200">
+        <ListView ItemsSource="{Binding RegisterValues}" HorizontalAlignment="Stretch" Height="250">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <UniformGrid Rows="10" Columns="16"/>
+                    <UniformGrid Rows="16" Columns="16"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
@@ -48,6 +49,47 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        
+        
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <!-- Index TextBlock und TextBox -->
+            <TextBlock Text="Index" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
+            <TextBox x:Name="IndexTextBoxBank1" Width="200" HorizontalAlignment="Left" Margin="0,0,10,10"
+             Text="{Binding  Bank1Index, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
+
+            <!-- Wert TextBlock und TextBox -->
+            <TextBlock Text="Wert" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
+            <TextBox x:Name="ValueTextBoxBank1" Width="200" HorizontalAlignment="Left" Margin="0,0,10,10"
+             Text="{Binding Bank1Value, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
+
+            <!-- Button zum Übermitteln der Eingabe -->
+            <Button Content="Update Register" Width="150" Margin="0,0,0,10" HorizontalAlignment="Left"
+            Command="{Binding UpdateBank1Command}" />
+        </StackPanel>
+
+
+        <!-- Anzeigen der Registerwerte -->
+        <ListView ItemsSource="{Binding Bank1Values}" HorizontalAlignment="Stretch" Height="50">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Rows="1" Columns="10"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" HorizontalAlignment="Center" FontSize="14"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <TextBox Width="200" Height="30" 
+                 Text="{Binding RP0BitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
+
+
     </StackPanel>
+
 
 </Window>
