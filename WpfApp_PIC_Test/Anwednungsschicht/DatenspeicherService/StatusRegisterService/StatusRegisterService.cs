@@ -33,5 +33,4 @@ public class StatusRegisterService : IStatusRegisterService
         _dataRegister.SetBit(3, 5, true);
     }
 
-
 }
