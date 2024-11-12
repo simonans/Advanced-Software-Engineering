@@ -11,7 +11,7 @@ using WpfApp_PIC.Domänenschicht;
 namespace WpfApp_PIC.Pluginschicht.LST_File_Reader
 {
 
-    public class LST_File_Reader : IParser
+    public class LST_File_Reader : ILST_File_Reader
     {
 
         public LST_File_Reader() { }

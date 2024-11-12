@@ -11,7 +11,7 @@ public class DataRegisterViewModel : ViewModelBase
 {
     private readonly IDataRegisterService _dataRegisterService;
 
-    #region Datenspeicher Bank und Bank1
+    #region Datenspeicher Bank0 und Bank1
     private int _registerIndex;
     private int _registerValue;
 
@@ -107,6 +107,10 @@ public class DataRegisterViewModel : ViewModelBase
         // Befehl zum Übermitteln der Änderungen ohne Argument
         UpdateRegisterCommand = new RelayCommand(UpdateRegister);
         UpdateBank1Command = new RelayCommand(UpdateBank1);
+
+        // Event abonnieren
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(RP0BitValue));
+
     }
 
     #region Status Register (bisher nur RP0-Bit)
@@ -120,7 +124,7 @@ public class DataRegisterViewModel : ViewModelBase
         }
         set
         {
-            if (_statusRegisterService != null)
+            if (_statusRegisterService.GetRP0() != value)
             {
                 _statusRegisterService.SetRP0(value);
                 OnPropertyChanged(nameof(RP0BitValue));
