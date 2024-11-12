@@ -12,5 +12,7 @@ public interface IDataRegisterService
     int[] GetAllBank1Values();
     int GetValue(int index);
     void SetValue(int index, int value);
+    // Event hinzufügen
+    event EventHandler StatusChanged;
 }
 

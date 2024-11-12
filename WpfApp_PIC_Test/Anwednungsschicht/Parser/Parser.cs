@@ -5,8 +5,8 @@ using WpfApp_PIC.Pluginschicht.LST_File_Reader;
 namespace WpfApp_PIC.Adapterschicht.Parser;
 public class Parser
 {
-    private readonly IParser _reader;
-    public Parser(IParser reader)
+    private readonly ILST_File_Reader _reader;
+    public Parser(ILST_File_Reader reader)
     {
         _reader = reader;
     }

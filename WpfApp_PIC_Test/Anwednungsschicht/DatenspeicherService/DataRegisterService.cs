@@ -34,6 +34,14 @@ public class DataRegisterService : IDataRegisterService
     public void SetValue(int index, int value)
     {
         _dataRegister.SetValue(index, value);
+        OnStatusChanged();
+    }
+
+        public event EventHandler StatusChanged;
+
+    protected virtual void OnStatusChanged()
+    {
+        StatusChanged?.Invoke(this, EventArgs.Empty);
     }
 }
 

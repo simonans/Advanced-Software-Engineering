@@ -12,7 +12,7 @@ using WpfApp_PIC.Pluginschicht.LST_File_Reader;
 namespace WpfApp_PIC.Anwednungsschicht;
 internal class PIC
 {
-    private readonly IParser _reader;
+    private readonly ILST_File_Reader _reader;
 
     private Parser _parser;
     private DataRegister _datenspeicher;

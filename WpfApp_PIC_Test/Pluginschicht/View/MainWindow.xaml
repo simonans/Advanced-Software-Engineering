@@ -23,7 +23,7 @@
             <!-- Index TextBlock und TextBox -->
             <TextBlock Text="Index" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
             <TextBox x:Name="IndexTextBox" Width="200" HorizontalAlignment="Left" Margin="0,0,10,10"
-             Text="{Binding RegisterIndex,  Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
+             Text="{Binding RegisterIndex, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- Wert TextBlock und TextBox -->
             <TextBlock Text="Wert" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
@@ -84,9 +84,14 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <Border BorderBrush="Black" BorderThickness="1" Padding="5" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                <TextBlock Text="RP0" HorizontalAlignment="Center" />
+                <Border Height="1" Background="Gray" Margin="0,5" />
+                <TextBlock Text="{Binding RP0BitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Border>
 
-        <TextBox Width="200" Height="30" 
-                 Text="{Binding RP0BitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
 
 
     </StackPanel>
