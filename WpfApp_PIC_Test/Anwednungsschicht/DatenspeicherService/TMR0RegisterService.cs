@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using WpfApp_PIC.Domänenschicht;
 
-namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.StatusRegisterService
+namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
 {
     class TMR0RegisterService : ITMR0RegisterService
     {

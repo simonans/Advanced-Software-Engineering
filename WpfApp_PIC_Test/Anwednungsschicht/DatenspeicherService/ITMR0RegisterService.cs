@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.StatusRegisterService
+namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
 {
     public interface ITMR0RegisterService
     {
