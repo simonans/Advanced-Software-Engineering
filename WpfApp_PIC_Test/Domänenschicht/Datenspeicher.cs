@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace WpfApp_PIC.Domänenschicht
 {
@@ -10,6 +11,7 @@ namespace WpfApp_PIC.Domänenschicht
     {
         private int[] _register;
         private int[] _bank1;
+        private IProgrammCounterUpdate _programmCounterUpdate;
 
         public DataRegister()
         {
@@ -102,6 +104,25 @@ namespace WpfApp_PIC.Domänenschicht
                     return true; ;
             }
             return false;
+        }
+
+         
+        private void specialRegisterCalled(int index, int value)
+        {
+            switch(index)
+            {
+                case 0:
+                    SetValue(GetValue(4), value);
+                    break;
+
+                case 2:
+                    _programmCounterUpdate.PCLUpdate(value);
+                    break;
+
+                case 10:
+                    _programmCounterUpdate.PCLATHUpdate(value);
+                    break;
+            }
         }
         #endregion
     }
