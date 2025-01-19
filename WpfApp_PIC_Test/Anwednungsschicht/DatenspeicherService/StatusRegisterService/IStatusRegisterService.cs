@@ -12,22 +12,28 @@ public interface IStatusRegisterService
     void SetValue(int value);
 
     //int GetcarryFlag();
-    //void SetCarryFlag(int value);
+    void SetCarryFlag();
+    void ResetCarryFlag();
 
     //int GetDCFlag();
-    //void SetDCFlag(int value);
+    void SetDCFlag();
+    void ResetDCFlag();
 
     //int GetZeroFlag();
-    //void SetZeroFlag(int value);
+    void SetZeroFlag();
+    void ResetZeroFlag();
 
-    //int GetnPDFlag();
-    //void SetnPDFlag(int value);
+   
+    void SetPDFlag();
+    void ResetPDFlag();
 
-    //int GetnTOFlag();
-    //void SetnTOFlag(int value);
+   
+    void SetTOFlag();
+    void ResetTOFlag();
+
 
     int GetRP0();
-    void SetRP0(int value);
+    void SetRP0();
 
     //int GetRP1();
     //void SetRP1(int value);
