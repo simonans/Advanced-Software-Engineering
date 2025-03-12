@@ -5,7 +5,8 @@ using WpfApp_PIC.Adapterschicht.ViewModel;
 using WpfApp_PIC.Pluginschicht.View;
 using System.ComponentModel;
 using Microsoft.Win32;
-using WpfApp_PIC.Anwednungsschicht.DatenspeicherService.StatusRegisterService;
+using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
+;
 
 namespace WpfApp_PIC
 {
@@ -25,7 +26,7 @@ namespace WpfApp_PIC
                 //Shutdown();
                 //return;
             }
-
+            //Soll PIC oder Hier alle Objekte instanziiert werden?
             var pic = new PIC(filePath);
             var dataRegister = new DataRegister();
             var dataRegisterService = new DataRegisterService(dataRegister);

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp_PIC.Domänenschicht;
 
-namespace WpfApp_PIC.Anwednungsschicht;
+namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
 
 public class DataRegisterService 
 {
@@ -47,7 +47,7 @@ public class DataRegisterService
 
     protected virtual void OnStatusChanged()
     {
-        _status_changed?.Invoke(this, EventArgs.Empty);
+        StatusChanged?.Invoke(this, EventArgs.Empty);
     }
 }
 
