@@ -12,24 +12,33 @@ using WpfApp_PIC.Pluginschicht.LST_File_Reader;
 namespace WpfApp_PIC.Anwednungsschicht;
 internal class PIC
 {
+    
+    private DataRegister _datenspeicher;
+    private IProgrammCounterUpdate _programm_counter_update;
+    private ProgramCounter _program_counter;
+    private ProgramMemory _program_memory;
+    private Stack _stack;
+    private W_Register _w_register;
+
     private readonly ILST_File_Reader _reader;
 
     private Parser _parser;
-    private DataRegister _datenspeicher;
-    private ProgramMemory _programmspeicher;
-    private W_Register _w_Register;
-    private Stack _stack;
+
+    private Instructions _instructions;
+
 
     public PIC(string filePath)
     {
         _reader = new LST_File_Reader();
         _parser = new Parser(_reader);
-        _datenspeicher = new DataRegister();
-        _programmspeicher = new ProgramMemory();
-        _w_Register = new W_Register();
+        _program_counter = new ProgramCounter();
+        _programm_counter_update = new ProgrammCounterService(_program_counter);
+        _datenspeicher = new DataRegister(_programm_counter_update);
+        _program_memory = new ProgramMemory();
+        _w_register = new W_Register();
         _stack = new Stack();
 
-        _parser.ReadLstFile(filePath, _programmspeicher);
+        _parser.ReadLstFile(filePath, _program_memory);
     }
 }
 

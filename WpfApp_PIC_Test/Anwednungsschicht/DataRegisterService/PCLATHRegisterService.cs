@@ -7,11 +7,11 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
 {
-    public class PCLRegisterService : IPCLRegisterService
+    public class PCLATHRegisterService 
     {
         private DataRegister _dataRegister;
 
-        public PCLRegisterService(DataRegister dataRegister)
+        public PCLATHRegisterService(DataRegister dataRegister)
         {
             _dataRegister = dataRegister;
         }
@@ -23,12 +23,12 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
 
         public void SetValue(int value)
         {
-            _dataRegister.SetValue(2, value);
+            _dataRegister.SetValue(10, value);
         }
 
         public void increaseValue()
         {
-            _dataRegister.SetValue(2, GetValue() + 1);
+            _dataRegister.SetValue(10, GetValue() + 1);
         }
     }
 }

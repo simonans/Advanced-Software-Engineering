@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
 using WpfApp_PIC.Domänenschicht;
 
 //TMR0 Prescaler wurde entfernt
 
-namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
+namespace WpfApp_PIC.Anwednungsschicht
 {
-    class Befehle
+    class Instructions
     {
         readonly DataRegister datenspeicher;
         readonly W_Register w_register;
         readonly Stack stack;
-        readonly Programmzähler programmzähler;
-        readonly StatusRegisterService.StatusRegisterService statusRegisterService;
+        readonly ProgramCounter programmzähler;
+        readonly StatusRegisterService statusRegisterService;
         readonly TMR0RegisterService TMR0RegisterService;
 
-        public Befehle(DataRegister datenspeicher, W_Register w_register, Stack stack, Programmzähler programmzähler, StatusRegisterService.StatusRegisterService statusRegisterService, TMR0RegisterService tMR0RegisterService)
+        public Instructions(DataRegister datenspeicher, W_Register w_register, Stack stack, ProgramCounter programmzähler, StatusRegisterService statusRegisterService, TMR0RegisterService tMR0RegisterService)
         {
             this.datenspeicher = datenspeicher;
             this.w_register = w_register;
@@ -124,7 +125,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
             }
         }
 
-        
+
         //Hilfsfunktion, da am meisten verwendet
         private void affectingZeroFLag(int value)
         {
@@ -333,7 +334,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
         }
 
         //Genau einen Arbeitszyklus pausieren => konstante Länge der Arbeitszyklen
-        public  void nop()
+        public void nop()
         {
             //Muss nichts implementiert werden, da das "Ausführen" (aufrufen dieser leeeren Mtehode) quasi einen Arbeitszyklus dauert
         }
@@ -422,7 +423,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
             if (tmp == 0)
             {
                 programmzähler.IncreaseProgramCounter();
-                
+
             }
 
         }
@@ -438,7 +439,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
             if (tmp == 256)  //Bedeutet Überlauf, in das Register wird 0 geschrieben, wird in setDestination gehandelt
             {
                 programmzähler.IncreaseProgramCounter();
-                
+
             }
         }
 
@@ -489,7 +490,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
             if (bit == 1)
             {
                 programmzähler.IncreaseProgramCounter();
-                
+
             }
         }
         #endregion
@@ -506,7 +507,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
         }
 
         //Speichert nur die 8 relevanten Bits
-        
+
 
 
         //Cotrol Operations/////////////////////
@@ -641,7 +642,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
             int newAdress = getValueForJumpComands(Opcode);
             programmzähler.SetProgrammCounter(newAdress);
 
-            
+
         }
 
         public void returnlw(int Opcode)
@@ -650,14 +651,14 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
             w_register.SetValue(lowbyte);
             programmzähler.SetProgrammCounter(stack.Pop());
 
-            
+
         }
 
         public void Return()
         {
             programmzähler.SetProgrammCounter(stack.Pop());
 
-            
+
         }
 
         public void clrwdt()
@@ -674,7 +675,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
              Hier wird nur die Möglichkeit durch ansprechen des Watchdogs implementiert, da nur dieser Fall getestet wird!
              Die Varianten, durch ein "L" am MCLR-Eingang oder durch das Auftreten eines Interrupts den Sleep-Modus zu beenden, 
              werden hier explizit nicht implementiert.*/
-            
+
 
             //0 -> WatchdogVorteiler und WDT = 0
             //
@@ -687,11 +688,11 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.Befehle
             datenspeicher.SetBit(11, 7, true);
             programmzähler.SetProgrammCounter(stack.Pop());
 
-            
+
         }
 
 
         #endregion
     }
 }
-    
+

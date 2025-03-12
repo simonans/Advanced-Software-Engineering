@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp_PIC.Domänenschicht;
 
-namespace WpfApp_PIC.Anwednungsschicht.W_RegisterService;
-public class W_RegisterService : IW_RegisterService
+namespace WpfApp_PIC.Anwednungsschicht;
+public class W_RegisterService
 {
     private readonly W_Register _w_Register;
 

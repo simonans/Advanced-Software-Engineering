@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp_PIC.Domänenschicht;
 
-namespace WpfApp_PIC.Anwednungsschicht.ProgrammspeicherService;
+namespace WpfApp_PIC.Anwednungsschicht;
 
-public class ProgramMemoryService : IProgramMemoryService
+public class ProgramMemoryService 
 {
     private readonly ProgramMemory _ProgramMemory;
 

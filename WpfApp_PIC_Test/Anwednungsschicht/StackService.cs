@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp_PIC.Domänenschicht;
 
-namespace WpfApp_PIC.Anwednungsschicht.StackService;
-public class StackService : IStackService
+namespace WpfApp_PIC.Anwednungsschicht;
+public class StackService
 {
     private readonly Stack _stack;
 

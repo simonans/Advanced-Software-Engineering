@@ -13,7 +13,7 @@ namespace WpfApp_PIC.Domänenschicht
         private int[] _bank1;
         private IProgrammCounterUpdate _programmCounterUpdate;
 
-        public DataRegister()
+        public DataRegister(IProgrammCounterUpdate programmCounterUpdate)
         {
             _register = new int[256];
             _bank1 = new int[10];
@@ -27,6 +27,8 @@ namespace WpfApp_PIC.Domänenschicht
             _bank1[5] = 31;    //TrisA
             _bank1[6] = 255;   //TrisB
             _bank1[8] = 0;     //EECON1
+
+            _programmCounterUpdate = programmCounterUpdate;
         }
 
 

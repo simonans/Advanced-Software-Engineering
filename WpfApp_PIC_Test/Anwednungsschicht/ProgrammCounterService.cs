@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp_PIC.Domänenschicht;
 
-namespace WpfApp_PIC.Anwednungsschicht.ProgrammzählerService
+namespace WpfApp_PIC.Anwednungsschicht
 {
-    public class ProgrammCounterOverride : IProgrammCounterUpdate
+    public class ProgrammCounterService : IProgrammCounterUpdate
     {
-        private Programmzähler _programcounter;
+        private ProgramCounter _programcounter;
 
-        public ProgrammCounterOverride(Programmzähler programcounter)
+        public ProgrammCounterService(ProgramCounter programcounter)
         {
-            this._programcounter = programcounter;
+            _programcounter = programcounter;
         }
 
         public void PCLUpdate(int value)
@@ -32,9 +32,9 @@ namespace WpfApp_PIC.Anwednungsschicht.ProgrammzählerService
             value = value << 8;
             tmp |= value;
             _programcounter.SetProgrammCounter(tmp);
-            
+
         }
     }
-    
+
 }
 

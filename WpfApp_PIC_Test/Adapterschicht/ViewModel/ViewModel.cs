@@ -2,14 +2,15 @@
 using System.Linq;
 using System.Windows.Input;
 using WpfApp_PIC.Anwednungsschicht;
-using WpfApp_PIC.Anwednungsschicht.DatenspeicherService.StatusRegisterService;
+using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
 using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Adapterschicht.ViewModel;
 
 public class DataRegisterViewModel : ViewModelBase
 {
-    private readonly IDataRegisterService _dataRegisterService;
+    private readonly DataRegisterService _dataRegisterService;
+    private readonly StatusRegisterService _statusRegisterService;
 
     #region Datenspeicher Bank0 und Bank1
     private int _registerIndex;
@@ -96,7 +97,7 @@ public class DataRegisterViewModel : ViewModelBase
     }
     #endregion
 
-    public DataRegisterViewModel(IDataRegisterService dataRegisterService, IStatusRegisterService statusRegisterService)
+    public DataRegisterViewModel(DataRegisterService dataRegisterService, StatusRegisterService statusRegisterService)
     {
         _dataRegisterService = dataRegisterService;
         _statusRegisterService = statusRegisterService;
@@ -114,7 +115,7 @@ public class DataRegisterViewModel : ViewModelBase
     }
 
     #region Status Register (bisher nur RP0-Bit)
-    private readonly IStatusRegisterService _statusRegisterService;
+    
 
     public int RP0BitValue
     {
@@ -126,7 +127,7 @@ public class DataRegisterViewModel : ViewModelBase
         {
             if (_statusRegisterService.GetRP0() != value)
             {
-                _statusRegisterService.SetRP0(value);
+                _statusRegisterService.SetRP0();
                 OnPropertyChanged(nameof(RP0BitValue));
             }
         }

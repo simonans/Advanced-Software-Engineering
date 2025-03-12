@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp_PIC.Domänenschicht;
 
-namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService.StatusRegisterService;
-public class StatusRegisterService : IStatusRegisterService
+namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
+public class StatusRegisterService
 {
     private readonly DataRegister _dataRegister;
-    public StatusRegisterService(DataRegister dataRegister) 
+    public StatusRegisterService(DataRegister dataRegister)
     {
         _dataRegister = dataRegister;
     }

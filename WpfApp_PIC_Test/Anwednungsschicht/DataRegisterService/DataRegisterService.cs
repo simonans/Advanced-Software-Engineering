@@ -7,13 +7,19 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht;
 
-public class DataRegisterService : IDataRegisterService
+public class DataRegisterService 
 {
     private readonly DataRegister _dataRegister;
+    public event EventHandler StatusChanged;
+    //Ich weiß nicht, ob wir diesen EventHandler aufgrund der Clean Code Architektur haben dürfen
+    //Auf jeden Fall muss dieser im Konstruktor initialisiert werden
+    //Kann man ihn auch private machen, oder muss er public sein?
 
     public DataRegisterService(DataRegister dataRegister)
     {
         _dataRegister = dataRegister;
+        
+
     }
 
     public int[] GetAllBank0Values()
@@ -37,11 +43,11 @@ public class DataRegisterService : IDataRegisterService
         OnStatusChanged();
     }
 
-        public event EventHandler StatusChanged;
+        
 
     protected virtual void OnStatusChanged()
     {
-        StatusChanged?.Invoke(this, EventArgs.Empty);
+        _status_changed?.Invoke(this, EventArgs.Empty);
     }
 }
 
