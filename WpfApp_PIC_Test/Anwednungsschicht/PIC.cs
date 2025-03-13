@@ -24,15 +24,8 @@ internal class PIC
     //Anwendungsschicht
     private readonly ILST_File_Reader _reader;
     private Parser _parser;
-    private DataRegisterService _data_register_service;
-    private PCLATHRegisterService _pclath_register_service;
-    private PCLRegisterService _pcl_register_service;
-    private StatusRegisterService _status_register_service;
-    private TMR0RegisterService _tmr0_register_service;
     private Instructions _instructions;
-    private ProgramMemoryService _program_memory_service;
-    private StackService _stack_service;
-    private W_RegisterService _w_register_service;
+    private Decoder _decoder;
     
 
     //Hier dann noch Adapterschicht und Pluginschicht
@@ -49,17 +42,18 @@ internal class PIC
 
         _reader = new LST_File_Reader();
         _parser = new Parser(_reader);
-        _data_register_service = new DataRegisterService(_data_register);
-        _pclath_register_service = new PCLATHRegisterService(_data_register);
-        _pcl_register_service = new PCLRegisterService(_data_register);
-        _status_register_service = new StatusRegisterService(_data_register);
-        _tmr0_register_service = new TMR0RegisterService(_data_register);
-        _instructions = new Instructions(_data_register, _w_register, _stack, _program_counter, _status_register_service, _tmr0_register_service);
-        _program_memory_service = new ProgramMemoryService(_program_memory);
-        _stack_service = new StackService(_stack);
-        _w_register_service = new W_RegisterService(_w_register);
+        _instructions = new Instructions
+            (_data_register, _w_register, _stack, _program_counter, new StatusRegisterService(_data_register), new TMR0RegisterService(_data_register));
+        _decoder = new Decoder(_instructions, new ProgrammCounterService(_program_counter));
 
         _parser.ReadLstFile(filePath, _program_memory);
     }
+
+
+    public void RunOneInstruction()
+    {
+        _decoder.Decode();
+    }
+
 }
 

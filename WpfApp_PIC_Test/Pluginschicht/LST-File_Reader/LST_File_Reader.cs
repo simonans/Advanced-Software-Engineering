@@ -16,7 +16,7 @@ namespace WpfApp_PIC.Pluginschicht.LST_File_Reader
 
         public LST_File_Reader() { }
 
-        public void ReadFile(string filePath, ProgramMemory programmspeicher)
+        public void ReadFile(string filePath, ProgramMemory programMemory)
         {
             if (File.Exists(filePath))
             {
@@ -43,7 +43,7 @@ namespace WpfApp_PIC.Pluginschicht.LST_File_Reader
                                 string hexNumber2 = line.Substring(5, 4);
                                 decimalNumber = Convert.ToInt32(hexNumber2, 16);
                                 // Befehlscode an jeweiligem Index speichern (nach Reihenfolge des Einelesens)
-                                programmspeicher.SetValue(index, decimalNumber);
+                                programMemory.SetValue(index, decimalNumber);
                             }
                         }
                     }
