@@ -6,7 +6,10 @@ using WpfApp_PIC.Pluginschicht.View;
 using System.ComponentModel;
 using Microsoft.Win32;
 using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
-;
+using System.Net.WebSockets;
+using WpfApp_PIC.Pluginschicht.LST_File_Reader;
+using System.Reflection.PortableExecutable;
+using WpfApp_PIC.Adapterschicht.Parser;
 
 namespace WpfApp_PIC
 {
@@ -26,13 +29,30 @@ namespace WpfApp_PIC
                 //Shutdown();
                 //return;
             }
-            //Soll PIC oder Hier alle Objekte instanziiert werden?
-            var pic = new PIC(filePath);
-            var dataRegister = new DataRegister();
-            var dataRegisterService = new DataRegisterService(dataRegister);
-            var statusRegisterService = new StatusRegisterService(dataRegister);
-            var viewModel = new DataRegisterViewModel(dataRegisterService, statusRegisterService);
 
+
+            //Pluginschicht initialisieren: Datei-Reader und Parser
+            var reader = new LST_File_Reader();
+            var parser = new Parser(reader);
+
+            //Zentrale PIC-Instanz
+            var pic = new PIC(filePath, parser);
+
+            //Anwendungsschicht initialisieren: Services
+            var stackService = new StackService(pic.GetStack());
+            var wRegisterService = new W_RegisterService(pic.GetW_Register());
+            var programMemoryService = new ProgramMemoryService(pic.GetProgramMemory());
+            var programCounterService = new ProgrammCounterService(pic.GetProgramCounter());
+            var dataRegisterService = new DataRegisterService(pic.GetDataRegister());
+            var pclathRegisterService = new PCLATHRegisterService(pic.GetDataRegister());
+            var pclRegisterService = new PCLRegisterService(pic.GetDataRegister());
+            var statusRegisterService = new StatusRegisterService(pic.GetDataRegister());
+            var tmr0RegisterService = new TMR0RegisterService(pic.GetDataRegister());
+
+            // Adapterschicht initialisieren: ViewModel
+            var viewModel = new DataRegisterViewModel(dataRegisterService, statusRegisterService, pclathRegisterService, pclRegisterService);
+
+            
             var mainWindow = new MainWindow
             {
                 DataContext = viewModel

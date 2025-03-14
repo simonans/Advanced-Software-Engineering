@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,7 +41,7 @@ namespace WpfApp_PIC.Domänenschicht
                 return _register[fsr];
             }
 
-            else if (StorageOnBank1(index))
+            else if (DifferentStorageOnBank1(index))
                 return _bank1[index];
 
             else 
@@ -49,10 +50,17 @@ namespace WpfApp_PIC.Domänenschicht
 
         public void SetValue(int index, int value)
         {
-            if (StorageOnBank1(index))
-                 _bank1[index] = value;
-            else
+            if (DifferentStorageOnBank1(index) && WritingOnBank1()) //nur auf Bank1 schreiben
+                _bank1[index] = value;
+            else if (DifferentStorageOnBank1(index) && !WritingOnBank1()) //nur auf Bank 0 schreiben
                 _register[index] = value;
+            else // = else if ((!DifferentStorageOnBank1(index) && WritingOnBank1()) || (!DifferentStorageOnBank1(index) && !WritingOnBank1()))
+            {
+                _register[index] = value;
+
+                if (index < 10)
+                    _bank1[index] = value;
+            }
         }
 
         public int GetBit(int index, int bitNumber)
@@ -98,16 +106,21 @@ namespace WpfApp_PIC.Domänenschicht
 
 
         #region private help functions
-        private bool StorageOnBank1(int addr)
+        private bool DifferentStorageOnBank1(int addr)
         {
             if (addr == 1 || addr == 5 || addr == 6 || addr == 8 || addr == 9)
-            {
-                if (GetBit(3, 5) == 1)      //if(RP0 Bit == 1)
-                    return true; ;
-            }
-            return false;
+                return true;
+            else 
+                return false;
         }
 
+        private bool WritingOnBank1()
+        {
+            if (GetBit(3, 5) == 1)      //if(RP0 Bit == 1)
+                return true;
+            else
+                return false;
+        }
          
         private void specialRegisterCalled(int index, int value)
         {

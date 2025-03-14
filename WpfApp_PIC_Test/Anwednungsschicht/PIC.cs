@@ -26,29 +26,52 @@ internal class PIC
     private Parser _parser;
     private Instructions _instructions;
     private Decoder _decoder;
-    
+
 
     //Hier dann noch Adapterschicht und Pluginschicht
-    
 
-    public PIC(string filePath)
+
+    public PIC(string filePath, Parser parser)
     {
-        _program_counter = new ProgramCounter();
-        _programm_counter_update = new ProgrammCounterService(_program_counter);
-        _data_register = new DataRegister(_programm_counter_update);
-        _program_memory = new ProgramMemory();
-        _w_register = new W_Register();
         _stack = new Stack();
+        _w_register = new W_Register();
+        _program_memory = new ProgramMemory();
+        _program_counter = new ProgramCounter();
+        _data_register = new DataRegister(new ProgrammCounterService(_program_counter));
+        
+        _parser = parser;
 
-        _reader = new LST_File_Reader();
-        _parser = new Parser(_reader);
         _instructions = new Instructions
             (_data_register, _w_register, _stack, _program_counter, new StatusRegisterService(_data_register), new TMR0RegisterService(_data_register));
         _decoder = new Decoder(_instructions, new ProgrammCounterService(_program_counter));
 
         _parser.ReadLstFile(filePath, _program_memory);
     }
+    
+    public DataRegister GetDataRegister()
+    {
+        return _data_register;
+    }
 
+    public Stack GetStack()
+    {
+        return _stack;
+    }
+
+    public W_Register GetW_Register()
+    {
+        return _w_register;
+    }
+
+    public ProgramMemory GetProgramMemory()
+    {
+        return _program_memory;
+    }
+
+    public ProgramCounter GetProgramCounter()
+    {
+        return _program_counter;
+    }
 
     public void RunOneInstruction()
     {

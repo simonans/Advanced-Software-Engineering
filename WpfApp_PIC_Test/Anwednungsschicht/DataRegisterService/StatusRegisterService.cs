@@ -24,6 +24,10 @@ public class StatusRegisterService
         _dataRegister.SetValue(3, value);
     }
 
+    public int GetCarryFlag()
+    {
+        return _dataRegister.GetBit(3, 0);
+    }
 
     public void SetCarryFlag()
     {
@@ -35,6 +39,10 @@ public class StatusRegisterService
         _dataRegister.SetBit(3, 0, false);
     }
 
+    public int GetDCFlag()
+    {
+        return _dataRegister.GetBit(3, 1);
+    }
 
     public void SetDCFlag()
     {
@@ -46,6 +54,10 @@ public class StatusRegisterService
         _dataRegister.SetBit(3, 1, false);
     }
 
+    public int GetZeroFlag()
+    {
+        return _dataRegister.GetBit(3, 2);
+    }
 
     public void SetZeroFlag()
     {
@@ -57,28 +69,39 @@ public class StatusRegisterService
         _dataRegister.SetBit(3, 2, false);
     }
 
-
-    public void SetPDFlag()
+    /*Da das Time-Out-Status-Bit und das Power-Down-Status-Bit inverse Bits sind,
+      gleicht das setzen dem speichern einer 0
+      und das rücksetzen dem speichern einer 1
+      im jeweiligen Status-Bit*/
+    public int GetPDFlag()
     {
-        _dataRegister.SetBit(3, 3, true);
+        return _dataRegister.GetBit(3, 2);
     }
 
-    public void ResetPDFlag()
+    public void SetPDFlag()
     {
         _dataRegister.SetBit(3, 3, false);
     }
 
-
-    public void SetTOFlag()
+    public void ResetPDFlag()
     {
-        _dataRegister.SetBit(3, 4, true);
+        _dataRegister.SetBit(3, 3, true);
     }
 
-    public void ResetTOFlag()
+    public int GetTOFlag()
+    {
+        return _dataRegister.GetBit(3, 2);
+    }
+
+    public void SetTOFlag()
     {
         _dataRegister.SetBit(3, 4, false);
     }
 
+    public void ResetTOFlag()
+    {
+        _dataRegister.SetBit(3, 4, true);
+    }
 
     public int GetRP0()
     {

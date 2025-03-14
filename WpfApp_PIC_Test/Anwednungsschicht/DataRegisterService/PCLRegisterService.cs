@@ -18,7 +18,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
 
         public int GetValue()
         {
-            return _dataRegister.GetValue(0);
+            return _dataRegister.GetValue(2);
         }
 
         public void SetValue(int value)

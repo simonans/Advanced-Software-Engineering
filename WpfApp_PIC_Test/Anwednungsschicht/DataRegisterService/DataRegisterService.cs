@@ -11,15 +11,10 @@ public class DataRegisterService
 {
     private readonly DataRegister _dataRegister;
     public event EventHandler StatusChanged;
-    //Ich weiß nicht, ob wir diesen EventHandler aufgrund der Clean Code Architektur haben dürfen
-    //Auf jeden Fall muss dieser im Konstruktor initialisiert werden
-    //Kann man ihn auch private machen, oder muss er public sein?
 
     public DataRegisterService(DataRegister dataRegister)
     {
         _dataRegister = dataRegister;
-        
-
     }
 
     public int[] GetAllBank0Values()

@@ -11,12 +11,13 @@ public class DataRegisterViewModel : ViewModelBase
 {
     private readonly DataRegisterService _dataRegisterService;
     private readonly StatusRegisterService _statusRegisterService;
+    private readonly PCLATHRegisterService _pclathRegisterService;
+    private readonly PCLRegisterService _pclRegisterService;
 
     #region Datenspeicher Bank0 und Bank1
     private int _registerIndex;
     private int _registerValue;
 
-    private int _bank1Index;
     private int _bank1Value;
 
     public int RegisterIndex
@@ -29,12 +30,6 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get => _registerValue;
         set => SetProperty(ref _registerValue, value);
-    }
-
-    public int Bank1Index
-    {
-        get => _bank1Index;
-        set => SetProperty(ref _bank1Index, value);
     }
 
     public int Bank1Value
@@ -62,8 +57,6 @@ public class DataRegisterViewModel : ViewModelBase
 
     public ICommand UpdateRegisterCommand { get; }
 
-    public ICommand UpdateBank1Command { get; }
-
     private void LoadRegisterValues()
     {
         var registerValues = _dataRegisterService.GetAllBank0Values();
@@ -85,37 +78,118 @@ public class DataRegisterViewModel : ViewModelBase
         LoadRegisterValues();
         LoadBank1Values();
     }
-
-    private void UpdateBank1()
-    {
-        // Den Wert im Register auf den angegebenen Wert setzen
-        _dataRegisterService.SetValue(Bank1Index, Bank1Value);
-
-        // Die Registerwerte neu laden, um die GUI zu aktualisieren
-        LoadBank1Values();
-        LoadRegisterValues();
-    }
     #endregion
 
-    public DataRegisterViewModel(DataRegisterService dataRegisterService, StatusRegisterService statusRegisterService)
+    public DataRegisterViewModel(DataRegisterService dataRegisterService, StatusRegisterService statusRegisterService, PCLATHRegisterService pclathRegisterService, PCLRegisterService pclRegisterService)
     {
         _dataRegisterService = dataRegisterService;
         _statusRegisterService = statusRegisterService;
+        _pclathRegisterService = pclathRegisterService;
+        _pclRegisterService = pclRegisterService;
 
         LoadRegisterValues();
         LoadBank1Values();
 
         // Befehl zum Übermitteln der Änderungen ohne Argument
         UpdateRegisterCommand = new RelayCommand(UpdateRegister);
-        UpdateBank1Command = new RelayCommand(UpdateBank1);
 
         // Event abonnieren
+        #region Status Register (Manipulation von RP1-Bit_6 und IRP-Bit_7 müssen nicht iplemntiert werden, da nur zwei Bänkeim Datenspeicher vorhanden)
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(CarryFlagBitValue));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(DCFlagBitValue));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(ZeroFlagBitValue));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PDFlagBitValue));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TOFlagBitValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(RP0BitValue));
+        #endregion
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLATHRegisterValue));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLRegisterValue));
+
+
 
     }
 
-    #region Status Register (bisher nur RP0-Bit)
-    
+    #region Status Register (Manipulation von RP1-Bit_6 und IRP-Bit_7 müssen nicht iplemntiert werden, da nur zwei Bänkeim Datenspeicher vorhanden)
+
+    public int CarryFlagBitValue
+    {
+        get
+        {
+            return _statusRegisterService.GetCarryFlag();
+        }
+        set
+        {
+            if (_statusRegisterService.GetCarryFlag() != value)
+            {
+                _statusRegisterService.SetCarryFlag();
+                OnPropertyChanged(nameof(CarryFlagBitValue));
+            }
+        }
+    }
+
+    public int DCFlagBitValue
+    {
+        get
+        {
+            return _statusRegisterService.GetDCFlag();
+        }
+        set
+        {
+            if (_statusRegisterService.GetDCFlag() != value)
+            {
+                _statusRegisterService.SetDCFlag();
+                OnPropertyChanged(nameof(DCFlagBitValue));
+            }
+        }
+    }
+
+    public int ZeroFlagBitValue
+    {
+        get
+        {
+            return _statusRegisterService.GetZeroFlag();
+        }
+        set
+        {
+            if (_statusRegisterService.GetZeroFlag() != value)
+            {
+                _statusRegisterService.SetZeroFlag();
+                OnPropertyChanged(nameof(ZeroFlagBitValue));
+            }
+        }
+    }
+
+    public int PDFlagBitValue
+    {
+        get
+        {
+            return _statusRegisterService.GetPDFlag();
+        }
+        set
+        {
+            if (_statusRegisterService.GetPDFlag() != value)
+            {
+                _statusRegisterService.SetPDFlag();
+                OnPropertyChanged(nameof(PDFlagBitValue));
+            }
+        }
+    }
+
+    public int TOFlagBitValue
+    {
+        get
+        {
+            return _statusRegisterService.GetTOFlag();
+        }
+        set
+        {
+            if (_statusRegisterService.GetTOFlag() != value)
+            {
+                _statusRegisterService.SetTOFlag();
+                OnPropertyChanged(nameof(TOFlagBitValue));
+            }
+        }
+    }
 
     public int RP0BitValue
     {
@@ -133,4 +207,38 @@ public class DataRegisterViewModel : ViewModelBase
         }
     }
     #endregion
+
+    public int PCLATHRegisterValue
+    {
+        get
+        {
+            return _pclathRegisterService.GetValue();
+        }
+        set
+        {
+            if (_pclathRegisterService.GetValue() != value)
+            {
+                _pclathRegisterService.SetValue(value);
+                OnPropertyChanged(nameof(PCLATHRegisterValue));
+            }
+        }
+    }
+
+    public int PCLRegisterValue
+    {
+        get
+        {
+            return _pclRegisterService.GetValue();
+        }
+        set
+        {
+            if (_pclRegisterService.GetValue() != value)
+            {
+                _pclRegisterService.SetValue(value);
+                OnPropertyChanged(nameof(PCLRegisterValue));
+            }
+        }
+    }
+
+
 }

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WpfApp_PIC"
         xmlns:converter="clr-namespace:WpfApp_PIC.Adapterschicht.View"
         mc:Ignorable="d"
-        Title="Register Values" Height="450" Width="800">
+        Title="Register Values" Height="Auto" Width="Auto"
+        SizeToContent="WidthAndHeight">
 
     
     <Window.Resources>
@@ -50,28 +51,9 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        
-        
-        
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-            <!-- Index TextBlock und TextBox -->
-            <TextBlock Text="Index" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
-            <TextBox x:Name="IndexTextBoxBank1" Width="200" HorizontalAlignment="Left" Margin="0,0,10,10"
-             Text="{Binding  Bank1Index, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
-
-            <!-- Wert TextBlock und TextBox -->
-            <TextBlock Text="Wert" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
-            <TextBox x:Name="ValueTextBoxBank1" Width="200" HorizontalAlignment="Left" Margin="0,0,10,10"
-             Text="{Binding Bank1Value, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
-
-            <!-- Button zum Übermitteln der Eingabe -->
-            <Button Content="Update Register" Width="150" Margin="0,0,0,10" HorizontalAlignment="Left"
-            Command="{Binding UpdateBank1Command}" />
-        </StackPanel>
-
 
         <!-- Anzeigen der Registerwerte -->
-        <ListView ItemsSource="{Binding Bank1Values}" HorizontalAlignment="Stretch" Height="50">
+        <ListView ItemsSource="{Binding Bank1Values}" HorizontalAlignment="Stretch" Height="30">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Rows="1" Columns="10"/>
@@ -84,15 +66,116 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Border BorderBrush="Black" BorderThickness="1" Padding="5" HorizontalAlignment="Left">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                <TextBlock Text="RP0" HorizontalAlignment="Center" />
-                <Border Height="1" Background="Gray" Margin="0,5" />
-                <TextBlock Text="{Binding RP0BitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </Border>
 
+        <!-- Anzeigen der Statusregisterwerte -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
 
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="CarryFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="{Binding CarryFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                       HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="DCFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="{Binding DCFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                       HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="DCFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="{Binding DCFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                       HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="ZeroFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="{Binding ZeroFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                       HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="PDFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="{Binding PDFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                       HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="ToFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="{Binding TOFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                       HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="RP0" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="{Binding RP0BitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                       HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="RP1" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="-" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="IRP" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="-" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+
+        <!-- Anzeigen des PCLATH-Registers -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="PCLATH-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="{Binding  PCLATHRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!-- Anzeigen des PCL-Registers -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+
+            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="PCL-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Border Height="1" Background="Gray" Margin="0,5" />
+                    <TextBlock Text="{Binding  PCLRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+        HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
 
     </StackPanel>
 
