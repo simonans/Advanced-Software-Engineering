@@ -50,12 +50,15 @@ namespace WpfApp_PIC
             var tmr0RegisterService = new TMR0RegisterService(pic.GetDataRegister());
 
             // Adapterschicht initialisieren: ViewModel
-            var viewModel = new DataRegisterViewModel(dataRegisterService, statusRegisterService, pclathRegisterService, pclRegisterService);
+            var dataRegisterViewModel = new DataRegisterViewModel(dataRegisterService, statusRegisterService, pclathRegisterService, pclRegisterService, tmr0RegisterService);
 
-            
+            /////////////////////////////////////////TODO///////////////////////////////////////////
+            var mainViewModel = new MainViewModel(dataRegisterViewModel);
+            /////////////////////////////////////////TODO///////////////////////////////////////////
+
             var mainWindow = new MainWindow
             {
-                DataContext = viewModel
+                DataContext = dataRegisterViewModel
             };
             mainWindow.ShowDialog();
         }

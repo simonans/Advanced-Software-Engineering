@@ -7,7 +7,7 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
 {
-    class TMR0RegisterService 
+    public class TMR0RegisterService 
     {
         private DataRegister _dataRegister;
 
@@ -18,7 +18,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
 
         public int GetValue()
         {
-            return _dataRegister.GetValue(1);
+            return _dataRegister.GetValueBank0(1);
         }
 
         public void SetValue(int value)

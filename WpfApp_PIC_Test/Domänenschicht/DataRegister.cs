@@ -41,13 +41,23 @@ namespace WpfApp_PIC.Domänenschicht
                 return _register[fsr];
             }
 
-            else if (DifferentStorageOnBank1(index))
+            else if (StorageOnBank1(index))
                 return _bank1[index];
 
             else 
                 return _register[index];
         }
 
+        public int GetValueBank0(int index)
+        {
+            return _register[index];
+        }
+        /* Bisher nicht benötigt, da kein Zugriff auf ein nicht gespiegeltes register aus Bank1 benötigt wurde!
+        public int GetValueBank1(int index)
+        {
+            return _bank1[index];
+        }
+        */
         public void SetValue(int index, int value)
         {
             if (DifferentStorageOnBank1(index) && WritingOnBank1()) //nur auf Bank1 schreiben
@@ -110,10 +120,18 @@ namespace WpfApp_PIC.Domänenschicht
         {
             if (addr == 1 || addr == 5 || addr == 6 || addr == 8 || addr == 9)
                 return true;
-            else 
+            else
                 return false;
         }
-
+        private bool StorageOnBank1(int addr)
+        {
+            if (DifferentStorageOnBank1(addr))
+            {
+                if (GetBit(3, 5) == 1)      //if(RP0 Bit == 1)
+                    return true; ;
+            }
+            return false;
+        }
         private bool WritingOnBank1()
         {
             if (GetBit(3, 5) == 1)      //if(RP0 Bit == 1)

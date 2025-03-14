@@ -13,6 +13,7 @@ public class DataRegisterViewModel : ViewModelBase
     private readonly StatusRegisterService _statusRegisterService;
     private readonly PCLATHRegisterService _pclathRegisterService;
     private readonly PCLRegisterService _pclRegisterService;
+    private readonly TMR0RegisterService _tmr0registerservice;
 
     #region Datenspeicher Bank0 und Bank1
     private int _registerIndex;
@@ -80,12 +81,13 @@ public class DataRegisterViewModel : ViewModelBase
     }
     #endregion
 
-    public DataRegisterViewModel(DataRegisterService dataRegisterService, StatusRegisterService statusRegisterService, PCLATHRegisterService pclathRegisterService, PCLRegisterService pclRegisterService)
+    public DataRegisterViewModel(DataRegisterService dataRegisterService, StatusRegisterService statusRegisterService, PCLATHRegisterService pclathRegisterService, PCLRegisterService pclRegisterService, TMR0RegisterService tmr0RegisterService)
     {
         _dataRegisterService = dataRegisterService;
         _statusRegisterService = statusRegisterService;
         _pclathRegisterService = pclathRegisterService;
         _pclRegisterService = pclRegisterService;
+        _tmr0registerservice = tmr0RegisterService;
 
         LoadRegisterValues();
         LoadBank1Values();
@@ -104,6 +106,7 @@ public class DataRegisterViewModel : ViewModelBase
         #endregion
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLATHRegisterValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLRegisterValue));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TMR0RegisterValue));
 
 
 
@@ -236,6 +239,22 @@ public class DataRegisterViewModel : ViewModelBase
             {
                 _pclRegisterService.SetValue(value);
                 OnPropertyChanged(nameof(PCLRegisterValue));
+            }
+        }
+    }
+
+    public int TMR0RegisterValue
+    {
+        get
+        {
+            return _tmr0registerservice.GetValue();
+        }
+        set
+        {
+            if (_tmr0registerservice.GetValue() != value)
+            {
+                _tmr0registerservice.SetValue(value);
+                OnPropertyChanged(nameof(TMR0RegisterValue));
             }
         }
     }
