@@ -58,7 +58,7 @@ namespace WpfApp_PIC
 
             var mainWindow = new MainWindow
             {
-                DataContext = dataRegisterViewModel
+                DataContext = mainViewModel
             };
             mainWindow.ShowDialog();
         }

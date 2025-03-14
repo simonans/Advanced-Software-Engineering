@@ -24,21 +24,21 @@
             <!-- Index TextBlock und TextBox -->
             <TextBlock Text="Index" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
             <TextBox x:Name="IndexTextBox" Width="200" HorizontalAlignment="Left" Margin="0,0,10,10"
-             Text="{Binding RegisterIndex, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
+             Text="{Binding dataRegisterViewModel.RegisterIndex, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- Wert TextBlock und TextBox -->
             <TextBlock Text="Wert" FontWeight="Bold" FontSize="16" Margin="0,0,10,10"/>
             <TextBox x:Name="ValueTextBox" Width="200" HorizontalAlignment="Left" Margin="0,0,10,10"
-             Text="{Binding RegisterValue, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
+             Text="{Binding dataRegisterViewModel.RegisterValue, Converter={StaticResource StringToNullableIntConverter}, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- Button zum Übermitteln der Eingabe -->
             <Button Content="Update Register" Width="150" Margin="0,0,0,10" HorizontalAlignment="Left"
-            Command="{Binding UpdateRegisterCommand}" />
+            Command="{Binding  dataRegisterViewModel.UpdateRegisterCommand}" />
         </StackPanel>
 
 
         <!-- Anzeigen der Registerwerte -->
-        <ListView ItemsSource="{Binding RegisterValues}" HorizontalAlignment="Stretch" Height="250">
+        <ListView ItemsSource="{Binding  dataRegisterViewModel.RegisterValues}" HorizontalAlignment="Stretch" Height="250">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Rows="16" Columns="16"/>
@@ -53,7 +53,7 @@
 
 
         <!-- Anzeigen der Registerwerte -->
-        <ListView ItemsSource="{Binding Bank1Values}" HorizontalAlignment="Stretch" Height="30">
+        <ListView ItemsSource="{Binding dataRegisterViewModel.Bank1Values}" HorizontalAlignment="Stretch" Height="30">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Rows="1" Columns="10"/>
@@ -74,7 +74,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="CarryFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding CarryFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding dataRegisterViewModel.CarryFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                        HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -83,7 +83,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="DCFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding DCFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding dataRegisterViewModel.DCFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                        HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -92,7 +92,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="DCFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding DCFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding dataRegisterViewModel.DCFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                        HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -101,7 +101,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="ZeroFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding ZeroFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding dataRegisterViewModel.ZeroFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                        HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -110,7 +110,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="PDFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding PDFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding dataRegisterViewModel.PDFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                        HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -119,7 +119,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="ToFlag" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding TOFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding dataRegisterViewModel.TOFlagBitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                        HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -128,7 +128,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="RP0" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding RP0BitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding dataRegisterViewModel.RP0BitValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                        HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -157,7 +157,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="PCLATH-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding  PCLATHRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding  dataRegisterViewModel.PCLATHRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                         HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -169,7 +169,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="PCL-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding  PCLRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding  dataRegisterViewModel.PCLRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                         HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -181,7 +181,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="TMR0-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
                     <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding  TMR0RegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    <TextBlock Text="{Binding  dataRegisterViewModel.TMR0RegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                         HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
