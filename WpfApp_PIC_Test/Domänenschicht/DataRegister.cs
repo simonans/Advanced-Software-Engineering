@@ -52,12 +52,10 @@ namespace WpfApp_PIC.Domänenschicht
         {
             return _register[index];
         }
-        /* Bisher nicht benötigt, da kein Zugriff auf ein nicht gespiegeltes register aus Bank1 benötigt wurde!
         public int GetValueBank1(int index)
         {
             return _bank1[index];
         }
-        */
         public void SetValue(int index, int value)
         {
             if (DifferentStorageOnBank1(index) && WritingOnBank1()) //nur auf Bank1 schreiben

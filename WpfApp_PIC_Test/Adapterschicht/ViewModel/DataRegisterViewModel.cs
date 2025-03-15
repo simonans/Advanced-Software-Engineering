@@ -14,6 +14,7 @@ public class DataRegisterViewModel : ViewModelBase
     private readonly PCLATHRegisterService _pclathRegisterService;
     private readonly PCLRegisterService _pclRegisterService;
     private readonly TMR0RegisterService _tmr0registerservice;
+    private readonly PortService _portService;
 
     #region Datenspeicher Bank0 und Bank1
     private int _registerIndex;
@@ -81,13 +82,14 @@ public class DataRegisterViewModel : ViewModelBase
     }
     #endregion
 
-    public DataRegisterViewModel(DataRegisterService dataRegisterService, StatusRegisterService statusRegisterService, PCLATHRegisterService pclathRegisterService, PCLRegisterService pclRegisterService, TMR0RegisterService tmr0RegisterService)
+    public DataRegisterViewModel(DataRegisterService dataRegisterService, StatusRegisterService statusRegisterService, PCLATHRegisterService pclathRegisterService, PCLRegisterService pclRegisterService, TMR0RegisterService tmr0RegisterService, PortService portService)
     {
         _dataRegisterService = dataRegisterService;
         _statusRegisterService = statusRegisterService;
         _pclathRegisterService = pclathRegisterService;
         _pclRegisterService = pclRegisterService;
         _tmr0registerservice = tmr0RegisterService;
+        _portService = portService;
 
         LoadRegisterValues();
         LoadBank1Values();
@@ -107,6 +109,10 @@ public class DataRegisterViewModel : ViewModelBase
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLATHRegisterValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLRegisterValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TMR0RegisterValue));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PortRA));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PortRB));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TrisRA));
+        _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TrisRB));
 
 
 
@@ -259,5 +265,65 @@ public class DataRegisterViewModel : ViewModelBase
         }
     }
 
+    public int PortRA
+    {
+        get
+        {
+            return _portService.GetValuePortRA();
+        }
+        set
+        {
+            if (_portService.GetValuePortRA() != value)
+            {
+                _portService.SetValuePort(value, 5);
+                OnPropertyChanged(nameof(PortRA));
+            }
+        }
+    }
+    public int PortRB
+    {
+        get
+        {
+            return _portService.GetValuePortBB();
+        }
+        set
+        {
+            if (_portService.GetValuePortBB() != value)
+            {
+                _portService.SetValuePort(value, 6);
+                OnPropertyChanged(nameof(PortRB));
+            }
+        }
+    }
+    public int TrisRA
+    {
+        get
+        {
+            return _portService.GetValueTrisRA();
+        }
+        set
+        {
+            if (_portService.GetValueTrisRA() != value)
+            {
+                _portService.SetValuePort(value, 5);
+                OnPropertyChanged(nameof(TrisRA));
+            }
+        }
+    }
+    public int TrisRB
+    {
+        get
+        {
+            return _portService.GetValueTrisRB();
+        }
+        set
+        {
+            if (_portService.GetValueTrisRB() != value)
+            {
+                _portService.SetValuePort(value, 6);
+                OnPropertyChanged(nameof(TrisRB));
+            }
+        }
+    }
 
 }
