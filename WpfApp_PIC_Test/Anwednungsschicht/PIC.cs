@@ -37,13 +37,13 @@ internal class PIC
         _w_register = new W_Register();
         _program_memory = new ProgramMemory();
         _program_counter = new ProgramCounter();
-        _data_register = new DataRegister(new ProgrammCounterService(_program_counter));
+        _data_register = new DataRegister(new ProgramCounterService(_program_counter));
         
         _parser = parser;
 
         _instructions = new Instructions
             (_data_register, _w_register, _stack, _program_counter, new StatusRegisterService(_data_register), new TMR0RegisterService(_data_register));
-        _decoder = new Decoder(_instructions, new ProgrammCounterService(_program_counter));
+        _decoder = new Decoder(_instructions, new ProgramCounterService(_program_counter));
 
         _parser.ReadLstFile(filePath, _program_memory);
     }

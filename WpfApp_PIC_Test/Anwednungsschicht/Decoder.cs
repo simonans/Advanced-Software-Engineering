@@ -9,12 +9,12 @@ namespace WpfApp_PIC.Anwednungsschicht
     internal class Decoder
     {
         private Instructions _instructions;
-        private ProgrammCounterService _programmCounterService;
+        private ProgramCounterService _ProgramCounterService;
 
-        public Decoder(Instructions instructions, ProgrammCounterService programmCounterService)
+        public Decoder(Instructions instructions, ProgramCounterService ProgramCounterService)
         {
             _instructions = instructions;
-            _programmCounterService = programmCounterService;
+            _ProgramCounterService = ProgramCounterService;
         }
 
         public void Decode()

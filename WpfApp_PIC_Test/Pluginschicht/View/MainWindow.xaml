@@ -53,7 +53,7 @@
 
 
         <!-- Anzeigen der Registerwerte -->
-        <ListView ItemsSource="{Binding dataRegisterViewModel.Bank1Values}" HorizontalAlignment="Stretch" Height="30">
+        <ListView ItemsSource="{Binding dataRegisterViewModel.Bank1Values}" Margin="0,10,0,0" HorizontalAlignment="Stretch" Height="30">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Rows="1" Columns="10"/>
@@ -68,7 +68,7 @@
 
 
         <!-- Anzeigen der Statusregisterwerte -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,20,0,0">
 
             <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
                 <StackPanel Orientation="Vertical">
@@ -148,46 +148,75 @@
                     <TextBlock Text="-" HorizontalAlignment="Center" TextAlignment="Center"/>
                 </StackPanel>
             </Border>
-
         </StackPanel>
 
-        <!-- Anzeigen des PCLATH-Registers -->
+        <!-- Anzeigen des PCLATH-Registers und Stack-Werte -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
-            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="PCLATH-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
-                    <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding  dataRegisterViewModel.PCLATHRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
-                        HorizontalAlignment="Center" TextAlignment="Center"/>
-                </StackPanel>
-            </Border>
-        </StackPanel>
+            <!-- Anzeigen des PCLATH-Registers-->
+            <StackPanel>
+                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="PCLATH-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
+                        <Border Height="1" Background="Gray" Margin="0,5" />
+                        <TextBlock Text="{Binding dataRegisterViewModel.PCLATHRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    HorizontalAlignment="Center" TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
 
-        <!-- Anzeigen des PCL-Registers -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
-            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="PCL-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
-                    <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding  dataRegisterViewModel.PCLRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
-                        HorizontalAlignment="Center" TextAlignment="Center"/>
-                </StackPanel>
-            </Border>
-        </StackPanel>
+                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="PCL-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
+                        <Border Height="1" Background="Gray" Margin="0,5" />
+                        <TextBlock Text="{Binding dataRegisterViewModel.PCLRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    HorizontalAlignment="Center" TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
 
-        <!-- Anzeigen des TMR0-Registers -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
-            <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="TMR0-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
-                    <Border Height="1" Background="Gray" Margin="0,5" />
-                    <TextBlock Text="{Binding  dataRegisterViewModel.TMR0RegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
-                        HorizontalAlignment="Center" TextAlignment="Center"/>
-                </StackPanel>
-            </Border>
+                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="TMR0-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
+                        <Border Height="1" Background="Gray" Margin="0,5" />
+                        <TextBlock Text="{Binding dataRegisterViewModel.TMR0RegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    HorizontalAlignment="Center" TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <!-- Anzeigen des ProgramCounters-->
+            <StackPanel>
+                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="PC" HorizontalAlignment="Center" TextAlignment="Center"/>
+                        <Border Height="1" Background="Gray" Margin="0,5" />
+                        <TextBlock Text="{Binding programCounterViewModel.PCValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+        HorizontalAlignment="Center" TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <!-- Anzeigen des W-Registers-->
+            <StackPanel>
+                <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="W-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
+                        <Border Height="1" Background="Gray" Margin="0,5" />
+                        <TextBlock Text="{Binding w_RegisterViewModel.WValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+HorizontalAlignment="Center" TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <!-- ListView zur Anzeige der Stack-Werte -->
+            <ListView ItemsSource="{Binding stackViewModel.StackValues}" Margin="500,0,0,0" HorizontalAlignment="Stretch" Height="250" Width="100">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Rows="8" Columns="1"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" HorizontalAlignment="Center" FontSize="14"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
 
     </StackPanel>
-
-
 </Window>

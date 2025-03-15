@@ -7,11 +7,11 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht
 {
-    public class ProgrammCounterService : IProgrammCounterUpdate
+    public class ProgramCounterService : IProgrammCounterUpdate
     {
         private ProgramCounter _programcounter;
 
-        public ProgrammCounterService(ProgramCounter programcounter)
+        public ProgramCounterService(ProgramCounter programcounter)
         {
             _programcounter = programcounter;
         }
@@ -33,6 +33,16 @@ namespace WpfApp_PIC.Anwednungsschicht
             tmp |= value;
             _programcounter.SetProgrammCounter(tmp);
 
+        }
+
+        public int GetPC()
+        {
+            return _programcounter.GetProgramCounter();
+        }
+
+        public void SetPC(int newValue)
+        {
+            _programcounter.SetProgrammCounter(newValue);
         }
     }
 

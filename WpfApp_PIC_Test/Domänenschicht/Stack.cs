@@ -30,8 +30,10 @@ public class Stack
         return topOfTheStack;
 
     }
-
-
+    public IEnumerable<int> GetValues()
+    {
+        return _register;
+    }
 
     private void DecrementStackPointer()
     {

@@ -9,6 +9,7 @@ namespace WpfApp_PIC.Anwednungsschicht;
 public class StackService
 {
     private readonly Stack _stack;
+    public event EventHandler StatusChanged;
 
     public StackService(Stack stack)
     {
@@ -18,11 +19,22 @@ public class StackService
     public void Push(int value)
     {
         _stack.Push(value);
+        OnStatusChanged();
     }
 
     public int Pop()
     {
-        return _stack.Pop();
+        int value = _stack.Pop();
+        OnStatusChanged();
+        return value;
+    }
+    public IEnumerable<int> GetStackValues()
+    {
+        return _stack.GetValues();
+    }
+    protected virtual void OnStatusChanged()
+    {
+        StatusChanged?.Invoke(this, EventArgs.Empty);
     }
 }
 

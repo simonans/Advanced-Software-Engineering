@@ -42,7 +42,7 @@ namespace WpfApp_PIC
             var stackService = new StackService(pic.GetStack());
             var wRegisterService = new W_RegisterService(pic.GetW_Register());
             var programMemoryService = new ProgramMemoryService(pic.GetProgramMemory());
-            var programCounterService = new ProgrammCounterService(pic.GetProgramCounter());
+            var programCounterService = new ProgramCounterService(pic.GetProgramCounter());
             var dataRegisterService = new DataRegisterService(pic.GetDataRegister());
             var pclathRegisterService = new PCLATHRegisterService(pic.GetDataRegister());
             var pclRegisterService = new PCLRegisterService(pic.GetDataRegister());
@@ -51,10 +51,22 @@ namespace WpfApp_PIC
 
             // Adapterschicht initialisieren: ViewModel
             var dataRegisterViewModel = new DataRegisterViewModel(dataRegisterService, statusRegisterService, pclathRegisterService, pclRegisterService, tmr0RegisterService);
+            var stackViewModel = new StackViewModel(stackService);
+            var programCounterViewModel = new ProgramCounterViewModel(programCounterService);
+            var w_RegisterViewModel = new W_RegisterViewModel(wRegisterService);
 
             /////////////////////////////////////////TODO///////////////////////////////////////////
-            var mainViewModel = new MainViewModel(dataRegisterViewModel);
+            var mainViewModel = new MainViewModel(dataRegisterViewModel, stackViewModel, programCounterViewModel, w_RegisterViewModel);
             /////////////////////////////////////////TODO///////////////////////////////////////////
+            
+            //Binding Tests//
+            stackService.Push(4);
+            stackService.Push(5);
+            stackService.Pop();
+            programCounterService.PCLUpdate(1);
+            programCounterService.PCLATHUpdate(1);
+            wRegisterService.SetValue(1);
+            //Binding Tests//
 
             var mainWindow = new MainWindow
             {
