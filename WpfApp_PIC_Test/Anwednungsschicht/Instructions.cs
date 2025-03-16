@@ -292,7 +292,7 @@ namespace WpfApp_PIC.Anwednungsschicht
             affectingZeroFLag(tmp);
         }
 
-        public void decf(int Opcode, W_Register w_Register)
+        public void decf(int Opcode)
         {
             int lowbyte = extractLowbyteOpcode(Opcode);
 

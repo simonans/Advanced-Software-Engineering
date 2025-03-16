@@ -43,7 +43,7 @@ internal class PIC
 
         _instructions = new Instructions
             (_data_register, _w_register, _stack, _program_counter, new StatusRegisterService(_data_register), new TMR0RegisterService(_data_register));
-        _decoder = new Decoder(_instructions, new ProgramCounterService(_program_counter));
+        _decoder = new Decoder(_instructions, new ProgramCounterService(_program_counter), new ProgramMemoryService(_program_memory));
 
         _parser.ReadLstFile(filePath, _program_memory);
     }

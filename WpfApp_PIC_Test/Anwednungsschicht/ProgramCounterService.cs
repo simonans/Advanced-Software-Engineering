@@ -44,6 +44,11 @@ namespace WpfApp_PIC.Anwednungsschicht
         {
             _programcounter.SetProgrammCounter(newValue);
         }
+
+        public void IncreasePC()
+        {
+            _programcounter.IncreaseProgramCounter();
+        }
     }
 
 }
