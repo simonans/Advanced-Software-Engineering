@@ -24,6 +24,8 @@ public class StatusRegisterService
         _dataRegister.SetValue(3, value);
     }
 
+
+
     public int GetCarryFlag()
     {
         return _dataRegister.GetBit(3, 0);
@@ -75,7 +77,7 @@ public class StatusRegisterService
       im jeweiligen Status-Bit*/
     public int GetPDFlag()
     {
-        return _dataRegister.GetBit(3, 2);
+        return _dataRegister.GetBit(3, 3);
     }
 
     public void SetPDFlag()
@@ -90,7 +92,7 @@ public class StatusRegisterService
 
     public int GetTOFlag()
     {
-        return _dataRegister.GetBit(3, 2);
+        return _dataRegister.GetBit(3, 4);
     }
 
     public void SetTOFlag()
@@ -111,6 +113,10 @@ public class StatusRegisterService
     public void SetRP0()
     {
         _dataRegister.SetBit(3, 5, true);
+    }
+    public void ResetRP0()
+    {
+        _dataRegister.SetBit(3, 5, false);
     }
 
 }

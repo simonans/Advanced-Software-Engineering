@@ -9,7 +9,6 @@
         Title="Register Values" Height="Auto" Width="Auto"
         SizeToContent="WidthAndHeight">
 
-    
     <Window.Resources>
         <converter:StringToNullableIntConverter x:Key="StringToNullableIntConverter"/>
         <converter:IntToStringConverter x:Key="IntToStringConverter"/>

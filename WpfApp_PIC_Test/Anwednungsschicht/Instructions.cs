@@ -14,15 +14,17 @@ namespace WpfApp_PIC.Anwednungsschicht
     {
         readonly DataRegister datenspeicher;
         readonly W_Register w_register;
+        readonly W_RegisterService w_registerService;//////////////////////////////////////////////////////////////////////////////////////////
         readonly Stack stack;
         readonly ProgramCounter programmzähler;
         readonly StatusRegisterService statusRegisterService;
         readonly TMR0RegisterService TMR0RegisterService;
 
-        public Instructions(DataRegister datenspeicher, W_Register w_register, Stack stack, ProgramCounter programmzähler, StatusRegisterService statusRegisterService, TMR0RegisterService tMR0RegisterService)
+        public Instructions(DataRegister datenspeicher, W_Register w_register, Stack stack, ProgramCounter programmzähler, StatusRegisterService statusRegisterService, TMR0RegisterService tMR0RegisterService, W_RegisterService w_RegisterService)//////////////////////////////////////////////////////////////////////////////////////////
         {
             this.datenspeicher = datenspeicher;
             this.w_register = w_register;
+            this.w_registerService = w_RegisterService;//////////////////////////////////////////////////////////////////////////////////////////
             this.stack = stack;
             this.programmzähler = programmzähler;
             this.statusRegisterService = statusRegisterService;
@@ -529,7 +531,7 @@ namespace WpfApp_PIC.Anwednungsschicht
 
             int sum = val + literal;
 
-            w_register.SetValue(sum);
+            w_registerService.SetValue(sum);//////////////////////////////////////////////////////////////////////////////////////////;
 
             if (isOverflow(sum))
             {
@@ -581,7 +583,7 @@ namespace WpfApp_PIC.Anwednungsschicht
                 statusRegisterService.SetCarryFlag();
             }
 
-            w_register.SetValue(dif);
+            w_registerService.SetValue(dif);//////////////////////////////////////////////////////////////////////////////////////////
             affectingZeroFLag(dif);
 
         }
@@ -592,7 +594,7 @@ namespace WpfApp_PIC.Anwednungsschicht
 
             int tmp = w_register.GetValue() & literal;
 
-            w_register.SetValue(tmp);
+            w_registerService.SetValue(tmp);//////////////////////////////////////////////////////////////////////////////////////////
 
             affectingZeroFLag(tmp);
         }
@@ -603,7 +605,7 @@ namespace WpfApp_PIC.Anwednungsschicht
 
             int tmp = w_register.GetValue() | literal;
 
-            w_register.SetValue(tmp);
+            w_registerService.SetValue(tmp);//////////////////////////////////////////////////////////////////////////////////////////
 
             affectingZeroFLag(tmp);
         }
@@ -614,7 +616,7 @@ namespace WpfApp_PIC.Anwednungsschicht
 
             int tmp = w_register.GetValue() ^ literal;
 
-            w_register.SetValue(tmp);
+            w_registerService.SetValue(tmp);//////////////////////////////////////////////////////////////////////////////////////////
 
             affectingZeroFLag(tmp);
         }
@@ -624,6 +626,7 @@ namespace WpfApp_PIC.Anwednungsschicht
             int literal = extractLiteralOpcode(Opcode);
 
             w_register.SetValue(literal);
+            w_registerService.SetValue(literal);//////////////////////////////////////////////////////////////////////////////////////////
         }
 
 

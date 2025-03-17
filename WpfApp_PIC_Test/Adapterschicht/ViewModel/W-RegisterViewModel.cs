@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WpfApp_PIC.Anwednungsschicht;
 
 namespace WpfApp_PIC.Adapterschicht.ViewModel
@@ -14,6 +15,7 @@ namespace WpfApp_PIC.Adapterschicht.ViewModel
         public W_RegisterViewModel(W_RegisterService w_RegisterService)
         {
             _w_RegisterService = w_RegisterService;
+            _w_RegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(WValue));
         }
         public int WValue
         {

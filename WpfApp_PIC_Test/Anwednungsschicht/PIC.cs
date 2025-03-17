@@ -20,6 +20,7 @@ internal class PIC
     private ProgramMemory _program_memory;
     private Stack _stack;
     private W_Register _w_register;
+    private W_RegisterService _w_register_service;//////////////////////////////////////////////////////////////////////////////////////////
 
     //Anwendungsschicht
     private readonly ILST_File_Reader _reader;
@@ -38,11 +39,13 @@ internal class PIC
         _program_memory = new ProgramMemory();
         _program_counter = new ProgramCounter();
         _data_register = new DataRegister(new ProgramCounterService(_program_counter));
-        
+        _w_register_service = new W_RegisterService(_w_register);
+
+
         _parser = parser;
 
         _instructions = new Instructions
-            (_data_register, _w_register, _stack, _program_counter, new StatusRegisterService(_data_register), new TMR0RegisterService(_data_register));
+            (_data_register, _w_register, _stack, _program_counter, new StatusRegisterService(_data_register), new TMR0RegisterService(_data_register), _w_register_service);//////////////////////////////////////////////////////////////////////////////////////////
         _decoder = new Decoder(_instructions, new ProgramCounterService(_program_counter), new ProgramMemoryService(_program_memory));
 
         _parser.ReadLstFile(filePath, _program_memory);

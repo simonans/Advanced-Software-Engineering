@@ -10,6 +10,7 @@ namespace WpfApp_PIC.Anwednungsschicht
     public class ProgramCounterService : IProgrammCounterUpdate
     {
         private ProgramCounter _programcounter;
+        public event EventHandler ValueChanged;
 
         public ProgramCounterService(ProgramCounter programcounter)
         {
@@ -23,6 +24,7 @@ namespace WpfApp_PIC.Anwednungsschicht
             value &= 0xFF;
             tmp |= value;
             _programcounter.SetProgrammCounter(tmp);
+            OnValueChanged();
         }
 
         public void PCLATHUpdate(int value)
@@ -32,6 +34,7 @@ namespace WpfApp_PIC.Anwednungsschicht
             value = value << 8;
             tmp |= value;
             _programcounter.SetProgrammCounter(tmp);
+            OnValueChanged();
 
         }
 
@@ -43,11 +46,17 @@ namespace WpfApp_PIC.Anwednungsschicht
         public void SetPC(int newValue)
         {
             _programcounter.SetProgrammCounter(newValue);
+            OnValueChanged();
         }
 
         public void IncreasePC()
         {
             _programcounter.IncreaseProgramCounter();
+            OnValueChanged();
+        }
+        protected virtual void OnValueChanged()
+        {
+            ValueChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 
