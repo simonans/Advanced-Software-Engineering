@@ -38,7 +38,17 @@ public class DataRegisterService
         OnStatusChanged();
     }
 
-        
+    public int GetBit(int index, int bitNumber)
+    {
+        return _dataRegister.GetBit(index, bitNumber);
+    }
+
+    public void SetBit(int index, int bitNumber, bool set)
+    {
+        _dataRegister.SetBit(index, bitNumber, set);
+        OnStatusChanged();
+    }
+
 
     protected virtual void OnStatusChanged()
     {
