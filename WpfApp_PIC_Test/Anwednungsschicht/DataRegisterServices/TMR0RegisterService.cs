@@ -10,6 +10,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
     public class TMR0RegisterService 
     {
         private DataRegister _dataRegister;
+        public event EventHandler ValueChanged;
 
         public TMR0RegisterService(DataRegister dataRegister)
         {
@@ -24,11 +25,18 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
         public void SetValue(int value)
         {
             _dataRegister.SetValue(1, value);
+            OnValueChanged();
         }
 
         public void IncreaseValue()
         {
             _dataRegister.SetValue(1, GetValue() + 1);
+            OnValueChanged();
+        }
+
+        protected virtual void OnValueChanged()
+        {
+            ValueChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

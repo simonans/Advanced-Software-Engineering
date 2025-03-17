@@ -10,6 +10,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
     public class PortService
     {
         private readonly DataRegister _dataRegister;
+        public event EventHandler ValueChanged;
 
         public PortService(DataRegister dataRegister)
         {
@@ -42,6 +43,12 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
             {
                 _dataRegister.SetValue(6, Value);
             }
+            OnValueChanged();
+        }
+
+        protected virtual void OnValueChanged()
+        {
+            ValueChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

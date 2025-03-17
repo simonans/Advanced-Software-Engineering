@@ -106,6 +106,7 @@ public class DataRegisterViewModel : ViewModelBase
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TOFlagBitValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(RP0BitValue));
         #endregion
+
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLATHRegisterValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLRegisterValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TMR0RegisterValue));
@@ -113,6 +114,14 @@ public class DataRegisterViewModel : ViewModelBase
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PortRB));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TrisRA));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TrisRB));
+
+        _pclathRegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PCLATHRegisterValue));
+        _pclRegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PCLRegisterValue));
+        _tmr0registerservice.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TMR0RegisterValue));
+        _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PortRA));
+        _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PortRB));
+        _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TrisRA));
+        _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TrisRB));
 
 
 

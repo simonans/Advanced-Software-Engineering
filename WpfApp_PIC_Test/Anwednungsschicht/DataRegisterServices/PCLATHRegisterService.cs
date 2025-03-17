@@ -10,6 +10,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
     public class PCLATHRegisterService 
     {
         private DataRegister _dataRegister;
+        public event EventHandler ValueChanged;
 
         public PCLATHRegisterService(DataRegister dataRegister)
         {
@@ -24,11 +25,18 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
         public void SetValue(int value)
         {
             _dataRegister.SetValue(10, value);
+            OnValueChanged();
         }
 
         public void increaseValue()
         {
             _dataRegister.SetValue(10, GetValue() + 1);
+            OnValueChanged();
+        }
+
+        protected virtual void OnValueChanged()
+        {
+            ValueChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }
