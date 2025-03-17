@@ -50,7 +50,7 @@ namespace WpfApp_PIC
             var tmr0RegisterService = new TMR0RegisterService(pic.GetDataRegister());
             var portService = new PortService(pic.GetDataRegister());
             // Anwendungsschicht initialisieren: Decoder und ExecutionModule
-            var decoder = new Decoder(new Instructions(pic.GetDataRegister(), pic.GetW_Register(), pic.GetStack(), pic.GetProgramCounter(), statusRegisterService, tmr0RegisterService, wRegisterService), programCounterService, programMemoryService);//////////////////////////////////////////////////////////////////////////////////////////
+            var decoder = new Decoder(new Instructions(dataRegisterService, wRegisterService, stackService, programCounterService, statusRegisterService, tmr0RegisterService), programCounterService, programMemoryService);//////////////////////////////////////////////////////////////////////////////////////////
             var executionModule = new ExecutionModule(decoder);
 
             // Adapterschicht initialisieren: ViewModel
