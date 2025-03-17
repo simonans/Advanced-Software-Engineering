@@ -15,6 +15,7 @@ namespace WpfApp_PIC.Adapterschicht.ViewModel
         public ProgramCounterViewModel(ProgramCounterService programCounterService)
         {
             _programCounterService = programCounterService;
+            _programCounterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PCValue));
         }
         public int PCValue
         {
