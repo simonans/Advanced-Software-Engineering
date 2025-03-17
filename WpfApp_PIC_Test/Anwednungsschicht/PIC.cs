@@ -73,10 +73,10 @@ internal class PIC
         return _program_counter;
     }
 
-    public void RunOneInstruction()
-    {
-        _decoder.Decode();
-    }
+    //public void RunOneInstruction()
+    //{
+    //    _decoder.Decode();
+    //}
 
 }
 

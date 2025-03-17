@@ -20,9 +20,9 @@ namespace WpfApp_PIC.Domänenschicht
             _bank1 = new int[10];
 
             //Startwerte:
-            _register[2] = 0;   //PCL
-            _register[3] = 24;  //Status
-            _register[10] = 0;  //PCLATH
+            _register[2] = 0; _bank1[2] = 0;   //PCL
+            _register[3] = 24; _bank1[3] = 24;  //Status
+            _register[10] = 0; //PCLATH
             _register[11] = 0;  //Intcon
             _bank1[1] = 255;   //Option
             _bank1[5] = 31;    //TrisA

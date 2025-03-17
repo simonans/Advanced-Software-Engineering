@@ -13,12 +13,14 @@ namespace WpfApp_PIC.Adapterschicht.ViewModel
         public StackViewModel stackViewModel { get; }
         public ProgramCounterViewModel programCounterViewModel { get; }
         public W_RegisterViewModel w_RegisterViewModel{ get; }
-        public MainViewModel(DataRegisterViewModel dataRegisterViewModel, StackViewModel stackViewModel, ProgramCounterViewModel programMemoryViewModel, W_RegisterViewModel w_RegisterViewModel)
+        public ExecutionViewModel ExecutionViewModel { get; }
+        public MainViewModel(DataRegisterViewModel dataRegisterViewModel, StackViewModel stackViewModel, ProgramCounterViewModel programMemoryViewModel, W_RegisterViewModel w_RegisterViewModel, ExecutionViewModel executionViewModel)
         {
             this.dataRegisterViewModel = dataRegisterViewModel;
             this.stackViewModel = stackViewModel;
             this.programCounterViewModel = programMemoryViewModel;
             this.w_RegisterViewModel = w_RegisterViewModel;
+            ExecutionViewModel = executionViewModel;
         }
     }
 }

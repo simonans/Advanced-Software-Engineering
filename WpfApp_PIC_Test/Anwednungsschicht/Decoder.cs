@@ -7,7 +7,7 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht
 {
-    internal class Decoder
+    public class Decoder
     {
         private Instructions _instructions;
         private ProgramCounterService _programCounterService;

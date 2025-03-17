@@ -49,23 +49,18 @@ namespace WpfApp_PIC
             var statusRegisterService = new StatusRegisterService(pic.GetDataRegister());
             var tmr0RegisterService = new TMR0RegisterService(pic.GetDataRegister());
             var portService = new PortService(pic.GetDataRegister());
+            // Anwendungsschicht initialisieren: Decoder und ExecutionModule
+            var decoder = new Decoder(new Instructions(pic.GetDataRegister(), pic.GetW_Register(), pic.GetStack(), pic.GetProgramCounter(), statusRegisterService, tmr0RegisterService), programCounterService, programMemoryService);
+            var executionModule = new ExecutionModule(decoder);
 
             // Adapterschicht initialisieren: ViewModel
             var dataRegisterViewModel = new DataRegisterViewModel(dataRegisterService, statusRegisterService, pclathRegisterService, pclRegisterService, tmr0RegisterService, portService);
             var stackViewModel = new StackViewModel(stackService);
             var programCounterViewModel = new ProgramCounterViewModel(programCounterService);
             var w_RegisterViewModel = new W_RegisterViewModel(wRegisterService);
+            var executionViewModel = new ExecutionViewModel(executionModule);
 
-            var mainViewModel = new MainViewModel(dataRegisterViewModel, stackViewModel, programCounterViewModel, w_RegisterViewModel);
-            
-            //Binding Tests//
-            stackService.Push(4);
-            stackService.Push(5);
-            stackService.Pop();
-            programCounterService.PCLUpdate(1);
-            programCounterService.PCLATHUpdate(1);
-            wRegisterService.SetValue(1);
-            //Binding Tests//
+            var mainViewModel = new MainViewModel(dataRegisterViewModel, stackViewModel, programCounterViewModel, w_RegisterViewModel, executionViewModel);
 
             var mainWindow = new MainWindow
             {

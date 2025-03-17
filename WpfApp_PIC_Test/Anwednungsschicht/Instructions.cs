@@ -10,7 +10,7 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht
 {
-    class Instructions
+    public class Instructions
     {
         readonly DataRegister datenspeicher;
         readonly W_Register w_register;
