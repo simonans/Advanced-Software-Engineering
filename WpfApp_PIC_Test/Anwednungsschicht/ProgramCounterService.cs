@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
 using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht
@@ -11,11 +12,15 @@ namespace WpfApp_PIC.Anwednungsschicht
     public class ProgramCounterService /*: IProgrammCounterUpdate*/
     {
         private ProgramCounter _programcounter;
+        private PCLRegisterService _pclRegisterService;
+        private PCLATHRegisterService _pclathRegisterService;
         public event EventHandler ValueChanged;
 
-        public ProgramCounterService(ProgramCounter programcounter)
+        public ProgramCounterService(ProgramCounter programcounter, PCLRegisterService pclRegisterService, PCLATHRegisterService pclathRegisterService)
         {
             _programcounter = programcounter;
+            _pclRegisterService = pclRegisterService;
+            _pclathRegisterService = pclathRegisterService;
         }
 
         /*public void PCLUpdate(int value)
@@ -46,14 +51,16 @@ namespace WpfApp_PIC.Anwednungsschicht
         public void SetPC(int newValue)
         {
             _programcounter.SetProgrammCounter(newValue);
-            MessageBox.Show("Test");
+            _pclRegisterService.SetValue(newValue & 0xFF);
+            _pclathRegisterService.SetValue((newValue >> 8) & 0xFF);
             OnValueChanged();
         }
 
         public void IncreasePC()
         {
             _programcounter.IncreaseProgramCounter();
-            MessageBox.Show("Test");
+            _pclRegisterService.SetValue(_programcounter.GetProgramCounter() & 0xFF);
+            _pclathRegisterService.SetValue((_programcounter.GetProgramCounter() >> 8) & 0xFF);
             OnValueChanged();
         }
         protected virtual void OnValueChanged()

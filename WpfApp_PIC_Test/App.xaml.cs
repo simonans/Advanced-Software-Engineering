@@ -44,7 +44,7 @@ namespace WpfApp_PIC
             var programMemoryService = new ProgramMemoryService(pic.GetProgramMemory());
             var pclRegisterService = new PCLRegisterService(pic.GetDataRegister());
             var pclathRegisterService = new PCLATHRegisterService(pic.GetDataRegister());
-            var programCounterService = new ProgramCounterService(pic.GetProgramCounter());
+            var programCounterService = new ProgramCounterService(pic.GetProgramCounter(), pclRegisterService, pclathRegisterService);
             var dataRegisterService = new DataRegisterService(pic.GetDataRegister());         
             var statusRegisterService = new StatusRegisterService(pic.GetDataRegister());
             var tmr0RegisterService = new TMR0RegisterService(pic.GetDataRegister());

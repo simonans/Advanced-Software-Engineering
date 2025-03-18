@@ -20,7 +20,7 @@ namespace WpfApp_PIC.Domänenschicht
         public DataRegister(/*IProgrammCounterUpdate programmCounterUpdate*/)
         {
             _register = new int[256];
-            _bank1 = new int[10];
+            _bank1 = new int[12];
 
             //Startwerte:
             _register[2] = 0; _bank1[2] = 0;   //PCL
