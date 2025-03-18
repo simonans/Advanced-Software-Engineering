@@ -26,7 +26,7 @@ public class Stack
     {
         DecrementStackPointer();
         int topOfTheStack = _register[_stackPointer];
-        Push(0);
+        _register[_stackPointer] = 0;
         return topOfTheStack;
 
     }
