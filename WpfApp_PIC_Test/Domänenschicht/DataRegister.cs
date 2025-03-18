@@ -8,8 +8,10 @@ using System.Windows.Markup;
 
 namespace WpfApp_PIC.Domänenschicht
 {
+   
     public class DataRegister
     {
+        const int NUMBER_OF_SPECIAL_FUNCTION_REGISTERS = 12;
         private int[] _register;
         private int[] _bank1;
         private IProgrammCounterUpdate _programmCounterUpdate;
@@ -66,8 +68,11 @@ namespace WpfApp_PIC.Domänenschicht
             {
                 _register[index] = value;
 
-                if (index < 10)
+                if (index < NUMBER_OF_SPECIAL_FUNCTION_REGISTERS)
+                {
                     _bank1[index] = value;
+                    SpecialRegisterHandler(index, value);
+                }    
             }
         }
 
@@ -138,23 +143,27 @@ namespace WpfApp_PIC.Domänenschicht
                 return false;
         }
          
-        //private void specialRegisterCalled(int index, int value)
-        //{
-        //    switch(index)
-        //    {
-        //        case 0:
-        //            SetValue(GetValue(4), value);
-        //            break;
+        private void SpecialRegisterHandler(int register, int value)
+        {
+            switch(register)
+            {
+                case 0:
+                    int indirectRegister = GetValue(4);
+                    if (indirectRegister != 0)
+                        SetValue(indirectRegister, value);   //Otherwise we have an endless loop
+                    break;
 
-        //        case 2:
-        //            _programmCounterUpdate.PCLUpdate(value);
-        //            break;
+                case 2:
+                    _programmCounterUpdate.PCLUpdate(value);
+                    break;
 
-        //        case 10:
-        //            _programmCounterUpdate.PCLATHUpdate(value);
-        //            break;
-        //    }
-        //}
+                case 10:
+                    _programmCounterUpdate.PCLATHUpdate(value);
+                    break;
+                default:
+                    break;
+            }
+        }
         #endregion
     }
 }
