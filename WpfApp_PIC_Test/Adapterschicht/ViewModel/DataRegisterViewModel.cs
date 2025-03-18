@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using WpfApp_PIC.Anwednungsschicht;
 using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
@@ -106,7 +107,8 @@ public class DataRegisterViewModel : ViewModelBase
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TOFlagBitValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(RP0BitValue));
         #endregion
-
+ 
+        #region Um die GUI zu aktualisieren, wenn sich die Registerwerte ändern
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLATHRegisterValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PCLRegisterValue));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TMR0RegisterValue));
@@ -114,7 +116,9 @@ public class DataRegisterViewModel : ViewModelBase
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(PortRB));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TrisRA));
         _dataRegisterService.StatusChanged += (sender, args) => OnPropertyChanged(nameof(TrisRB));
+        #endregion
 
+        #region SFRs (Special Function Registers) aktualisieren
         _pclathRegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PCLATHRegisterValue));
         _pclRegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PCLRegisterValue));
         _tmr0registerservice.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TMR0RegisterValue));
@@ -122,6 +126,7 @@ public class DataRegisterViewModel : ViewModelBase
         _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PortRB));
         _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TrisRA));
         _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TrisRB));
+        #endregion
 
 
 

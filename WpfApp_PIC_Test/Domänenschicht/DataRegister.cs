@@ -138,23 +138,23 @@ namespace WpfApp_PIC.Domänenschicht
                 return false;
         }
          
-        private void specialRegisterCalled(int index, int value)
-        {
-            switch(index)
-            {
-                case 0:
-                    SetValue(GetValue(4), value);
-                    break;
+        //private void specialRegisterCalled(int index, int value)
+        //{
+        //    switch(index)
+        //    {
+        //        case 0:
+        //            SetValue(GetValue(4), value);
+        //            break;
 
-                case 2:
-                    _programmCounterUpdate.PCLUpdate(value);
-                    break;
+        //        case 2:
+        //            _programmCounterUpdate.PCLUpdate(value);
+        //            break;
 
-                case 10:
-                    _programmCounterUpdate.PCLATHUpdate(value);
-                    break;
-            }
-        }
+        //        case 10:
+        //            _programmCounterUpdate.PCLATHUpdate(value);
+        //            break;
+        //    }
+        //}
         #endregion
     }
 }

@@ -42,10 +42,10 @@ namespace WpfApp_PIC
             var stackService = new StackService(pic.GetStack());
             var wRegisterService = new W_RegisterService(pic.GetW_Register());
             var programMemoryService = new ProgramMemoryService(pic.GetProgramMemory());
-            var programCounterService = new ProgramCounterService(pic.GetProgramCounter());
-            var dataRegisterService = new DataRegisterService(pic.GetDataRegister());
-            var pclathRegisterService = new PCLATHRegisterService(pic.GetDataRegister());
             var pclRegisterService = new PCLRegisterService(pic.GetDataRegister());
+            var pclathRegisterService = new PCLATHRegisterService(pic.GetDataRegister());
+            var programCounterService = new ProgramCounterService(pic.GetProgramCounter());
+            var dataRegisterService = new DataRegisterService(pic.GetDataRegister());         
             var statusRegisterService = new StatusRegisterService(pic.GetDataRegister());
             var tmr0RegisterService = new TMR0RegisterService(pic.GetDataRegister());
             var portService = new PortService(pic.GetDataRegister());
