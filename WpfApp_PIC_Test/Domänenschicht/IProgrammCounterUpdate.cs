@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp_PIC.Domänenschicht
+/*namespace WpfApp_PIC.Domänenschicht
 {
     public interface IProgrammCounterUpdate
     {
@@ -12,4 +12,4 @@ namespace WpfApp_PIC.Domänenschicht
 
         public void PCLATHUpdate(int value);
     }
-}
+}*/

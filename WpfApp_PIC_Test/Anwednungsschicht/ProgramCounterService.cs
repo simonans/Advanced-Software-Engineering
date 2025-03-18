@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht
 {
-    public class ProgramCounterService : IProgrammCounterUpdate
+    public class ProgramCounterService /*: IProgrammCounterUpdate*/
     {
         private ProgramCounter _programcounter;
         public event EventHandler ValueChanged;
@@ -17,7 +18,7 @@ namespace WpfApp_PIC.Anwednungsschicht
             _programcounter = programcounter;
         }
 
-        public void PCLUpdate(int value)
+        /*public void PCLUpdate(int value)
         {
             int tmp = _programcounter.GetProgramCounter();
             tmp &= 0xFF00;  //Set Lowbyte to zero
@@ -35,8 +36,7 @@ namespace WpfApp_PIC.Anwednungsschicht
             tmp |= value;
             _programcounter.SetProgrammCounter(tmp);
             OnValueChanged();
-
-        }
+        }*/
 
         public int GetPC()
         {
@@ -46,12 +46,14 @@ namespace WpfApp_PIC.Anwednungsschicht
         public void SetPC(int newValue)
         {
             _programcounter.SetProgrammCounter(newValue);
+            MessageBox.Show("Test");
             OnValueChanged();
         }
 
         public void IncreasePC()
         {
             _programcounter.IncreaseProgramCounter();
+            MessageBox.Show("Test");
             OnValueChanged();
         }
         protected virtual void OnValueChanged()
