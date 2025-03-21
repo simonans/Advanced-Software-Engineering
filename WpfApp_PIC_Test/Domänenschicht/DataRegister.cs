@@ -178,7 +178,7 @@ namespace WpfApp_PIC.Domänenschicht
             {
                 case 0:
                     int indirectRegister = GetValue(4);
-                    if (indirectRegister != 0)
+                    //if (indirectRegister != 0)
                         SetValue(indirectRegister, value);   //Otherwise we have an endless loop
                     break;
 
