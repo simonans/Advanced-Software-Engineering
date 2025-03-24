@@ -19,11 +19,11 @@ namespace WpfApp_PIC.Anwednungsschicht.DatenspeicherService
 
         public int GetValuePortRA()
         {
-            return _dataRegister.GetValueBank0(5);
+            return _dataRegister.GetValue(5);
         }
         public int GetValuePortBB()
         {
-            return _dataRegister.GetValueBank0(6);
+            return _dataRegister.GetValue(6);
         }
         public int GetValueTrisRA()
         {
