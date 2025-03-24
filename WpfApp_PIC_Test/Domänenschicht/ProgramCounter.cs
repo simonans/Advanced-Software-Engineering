@@ -31,7 +31,10 @@ namespace WpfApp_PIC.Domänenschicht
         public void IncreaseProgramCounter()
         {
             if (_programmCounterExternSet)
+            {
                 _programmCounterExternSet = false;
+                _programcounter++;
+            }
             else
                 _programcounter++;
         }

@@ -29,8 +29,8 @@ namespace WpfApp_PIC.Adapterschicht.ViewModel
             // Event abonnieren
             _stackService.StatusChanged += (sender, args) =>
             {
-                LoadStackValues(); // StackValues neu laden
-                OnPropertyChanged(nameof(StackValues)); // Ansicht benachrichtigen
+                LoadStackValues();
+                OnPropertyChanged(nameof(StackValues));
             };
         }
 

@@ -20,7 +20,7 @@ namespace WpfApp_PIC.Adapterschicht.ViewModel
             this.stackViewModel = stackViewModel;
             this.programCounterViewModel = programMemoryViewModel;
             this.w_RegisterViewModel = w_RegisterViewModel;
-            ExecutionViewModel = executionViewModel;
+            this.ExecutionViewModel = executionViewModel;
         }
     }
 }

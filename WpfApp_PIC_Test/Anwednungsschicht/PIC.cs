@@ -15,7 +15,7 @@ internal class PIC
 {
     //Domänenschicht
     private DataRegister _data_register;
-    private IProgrammCounterUpdate _programm_counter_update;
+    /*private IProgrammCounterUpdate _programm_counter_update;*/
     private ProgramCounter _program_counter;
     private ProgramMemory _program_memory;
     private Stack _stack;
@@ -38,7 +38,7 @@ internal class PIC
         _w_register = new W_Register();
         _program_memory = new ProgramMemory();
         _program_counter = new ProgramCounter();
-        _data_register = new DataRegister(new ProgramCounterService(_program_counter));
+        _data_register = new DataRegister(/*new ProgramCounterService(_program_counter)*/);
         _w_register_service = new W_RegisterService(_w_register);
 
 

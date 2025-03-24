@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
 using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht
 {
-    public class ProgramCounterService : IProgrammCounterUpdate
+    public class ProgramCounterService /*: IProgrammCounterUpdate*/
     {
         private ProgramCounter _programcounter;
+        private PCLRegisterService _pclRegisterService;
+        private PCLATHRegisterService _pclathRegisterService;
         public event EventHandler ValueChanged;
 
-        public ProgramCounterService(ProgramCounter programcounter)
+        public ProgramCounterService(ProgramCounter programcounter, PCLRegisterService pclRegisterService, PCLATHRegisterService pclathRegisterService)
         {
             _programcounter = programcounter;
+            _pclRegisterService = pclRegisterService;
+            _pclathRegisterService = pclathRegisterService;
         }
 
-        public void PCLUpdate(int value)
+        /*public void PCLUpdate(int value)
         {
             int tmp = _programcounter.GetProgramCounter();
             tmp &= 0xFF00;  //Set Lowbyte to zero
@@ -35,8 +41,7 @@ namespace WpfApp_PIC.Anwednungsschicht
             tmp |= value;
             _programcounter.SetProgrammCounter(tmp);
             OnValueChanged();
-
-        }
+        }*/
 
         public int GetPC()
         {
@@ -46,12 +51,16 @@ namespace WpfApp_PIC.Anwednungsschicht
         public void SetPC(int newValue)
         {
             _programcounter.SetProgrammCounter(newValue);
+            _pclRegisterService.SetValue(newValue & 0xFF);
+            _pclathRegisterService.SetValue((newValue >> 8) & 0xFF);
             OnValueChanged();
         }
 
         public void IncreasePC()
         {
             _programcounter.IncreaseProgramCounter();
+            _pclRegisterService.SetValue(_programcounter.GetProgramCounter() & 0xFF);
+            _pclathRegisterService.SetValue((_programcounter.GetProgramCounter() >> 8) & 0xFF);
             OnValueChanged();
         }
         protected virtual void OnValueChanged()

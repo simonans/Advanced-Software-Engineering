@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Markup;
@@ -12,14 +13,15 @@ namespace WpfApp_PIC.Domänenschicht
     public class DataRegister
     {
         const int NUMBER_OF_SPECIAL_FUNCTION_REGISTERS = 12;
+
         private int[] _register;
         private int[] _bank1;
-        private IProgrammCounterUpdate _programmCounterUpdate;
+        /*private IProgrammCounterUpdate _programmCounterUpdate;*/
 
-        public DataRegister(IProgrammCounterUpdate programmCounterUpdate)
+        public DataRegister(/*IProgrammCounterUpdate programmCounterUpdate*/)
         {
             _register = new int[256];
-            _bank1 = new int[10];
+            _bank1 = new int[12];
 
             //Startwerte:
             _register[2] = 0; _bank1[2] = 0;   //PCL
@@ -31,7 +33,7 @@ namespace WpfApp_PIC.Domänenschicht
             _bank1[6] = 255;   //TrisB
             _bank1[8] = 0;     //EECON1
 
-            _programmCounterUpdate = programmCounterUpdate;
+            /*_programmCounterUpdate = programmCounterUpdate;*/
         }
 
 
@@ -72,7 +74,7 @@ namespace WpfApp_PIC.Domänenschicht
                 {
                     _bank1[index] = value;
                     SpecialRegisterHandler(index, value);
-                }    
+                }
             }
         }
 
@@ -142,23 +144,51 @@ namespace WpfApp_PIC.Domänenschicht
             else
                 return false;
         }
-         
+
+        private int GetProgramCounter()
+        {
+            return GetValueBank0(2);
+        }
+
+        private void SetProgramCounter(int tmp)
+        {
+            _register[2] = tmp;
+        }
+
+        public void PCLUpdate(int value)
+        {
+            int tmp = GetProgramCounter();
+            tmp &= 0xFF00;  //Set Lowbyte to zero
+            value &= 0xFF;
+            tmp |= value;
+            SetProgramCounter(tmp);
+        }
+
+        public void PCLATHUpdate(int value)
+        {
+            int tmp = GetProgramCounter();
+            tmp &= 0xE0FF;  //Set Upper Five Bits to zero
+            value = value << 8;
+            tmp |= value;
+            SetProgramCounter(tmp);
+        }
+
         private void SpecialRegisterHandler(int register, int value)
         {
-            switch(register)
+            switch (register)
             {
                 case 0:
                     int indirectRegister = GetValue(4);
-                    if (indirectRegister != 0)
+                    //if (indirectRegister != 0)
                         SetValue(indirectRegister, value);   //Otherwise we have an endless loop
                     break;
 
                 case 2:
-                    _programmCounterUpdate.PCLUpdate(value);
+                    PCLUpdate(value);
                     break;
 
                 case 10:
-                    _programmCounterUpdate.PCLATHUpdate(value);
+                    PCLATHUpdate(value);
                     break;
                 default:
                     break;
