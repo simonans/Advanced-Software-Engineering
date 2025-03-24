@@ -7,7 +7,7 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
 {
-    class RegularSFR : ISFR
+    public class RegularSFR : ISFR
     {
         private DataRegister _dataRegister;
         private int _address;
@@ -56,7 +56,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
             OnValueChanged();
         }
 
-        public virtual void OnValueChanged()
+        protected virtual void OnValueChanged()
         {
             ValueChanged?.Invoke(this, EventArgs.Empty);
         }

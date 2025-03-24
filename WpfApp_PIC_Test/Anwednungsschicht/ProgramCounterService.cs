@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfApp_PIC.Anwednungsschicht.DataRegisterServices;
 using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
 using WpfApp_PIC.Domänenschicht;
 
@@ -12,11 +13,11 @@ namespace WpfApp_PIC.Anwednungsschicht
     public class ProgramCounterService /*: IProgrammCounterUpdate*/
     {
         private ProgramCounter _programcounter;
-        private PCLRegisterService _pclRegisterService;
-        private PCLATHRegisterService _pclathRegisterService;
+        private RegularSFR _pclRegisterService;
+        private RegularSFR _pclathRegisterService;
         public event EventHandler ValueChanged;
 
-        public ProgramCounterService(ProgramCounter programcounter, PCLRegisterService pclRegisterService, PCLATHRegisterService pclathRegisterService)
+        public ProgramCounterService(ProgramCounter programcounter, RegularSFR pclRegisterService, RegularSFR pclathRegisterService)
         {
             _programcounter = programcounter;
             _pclRegisterService = pclRegisterService;

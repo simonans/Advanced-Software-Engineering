@@ -1,5 +1,6 @@
 using System;
 using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
+using WpfApp_PIC.Anwednungsschicht.DataRegisterServices;
 using WpfApp_PIC.Domänenschicht;
 
 //TMR0 Prescaler wurde entfernt
@@ -12,10 +13,10 @@ namespace WpfApp_PIC.Anwednungsschicht
         readonly W_RegisterService _w_registerService;
         readonly StackService _stackService;
         readonly ProgramCounterService _programCounterService;
-        readonly StatusRegisterService _statusRegisterService;
-        readonly TMR0RegisterService _TMR0RegisterService;
+        readonly RegularSFR _statusRegisterService;
+        readonly RegularSFR _TMR0RegisterService;
 
-        public Instructions(DataRegisterService dataRegisterService, W_RegisterService w_RegisterService, StackService stackService, ProgramCounterService programCounterService, StatusRegisterService statusRegisterService, TMR0RegisterService tMR0RegisterService)
+        public Instructions(DataRegisterService dataRegisterService, W_RegisterService w_RegisterService, StackService stackService, ProgramCounterService programCounterService, RegularSFR statusRegisterService, RegularSFR tMR0RegisterService)
         {
             _dataRegisterService = dataRegisterService;
             _w_registerService = w_RegisterService;
@@ -124,11 +125,11 @@ namespace WpfApp_PIC.Anwednungsschicht
         {
             if (value == 0)
             {
-                _statusRegisterService.SetZeroFlag();
+                _statusRegisterService.SetBit(2);
             }
             else
             {
-                _statusRegisterService.ResetZeroFlag();
+                _statusRegisterService.ResetBit(2);
             }
         }
 
@@ -172,20 +173,20 @@ namespace WpfApp_PIC.Anwednungsschicht
 
             if (isOverflow(sum))
             {
-                _statusRegisterService.SetCarryFlag();
+                _statusRegisterService.SetBit(0);
             }
             else
             {
-                _statusRegisterService.ResetCarryFlag();
+                _statusRegisterService.ResetBit(0);
             }
 
             if (isHalfcarryOverflow(sum, val))
             {
-                _statusRegisterService.SetDCFlag();
+                _statusRegisterService.SetBit(1);
             }
             else
             {
-                _statusRegisterService.ResetDCFlag();
+                _statusRegisterService.ResetBit(1);
             }
 
             affectingZeroFLag(sum);
@@ -200,23 +201,23 @@ namespace WpfApp_PIC.Anwednungsschicht
             //Halfcarry wird vor Carry überprüft, da bei Carry evtl. der Wert verändert wird
             if (isHalfcarryUnderflow(dif))
             {
-                _statusRegisterService.ResetDCFlag();
+                _statusRegisterService.ResetBit(1);
             }
             else
             {
-                _statusRegisterService.SetDCFlag();
+                _statusRegisterService.SetBit(1);
             }
 
             if (isUnderflow(dif))
             {
-                _statusRegisterService.ResetCarryFlag();
+                _statusRegisterService.ResetBit(0);
                 //Bei Underflow muss das Ergebnis nochmal komplett neu berechnet werden
                 dif = _w_registerService.GetValue() - _dataRegisterService.GetValue(lowbyte);
                 dif = 256 - dif;  //Eigentlich 255 - dif + 1
             }
             else
             {
-                _statusRegisterService.SetCarryFlag();
+                _statusRegisterService.SetBit(0);
             }
 
             setDestination(Opcode, dif);
@@ -259,7 +260,7 @@ namespace WpfApp_PIC.Anwednungsschicht
         public void clrw()
         {
             _w_registerService.SetValue(0);
-            _statusRegisterService.SetZeroFlag();
+            _statusRegisterService.SetBit(2);
         }
 
         //Axhtung!! Bei Selektion Highbyte und "Destination-Bit" zum identifizieren verwenden 
@@ -268,7 +269,7 @@ namespace WpfApp_PIC.Anwednungsschicht
             int lowbyte = extractLowbyteOpcode(Opcode);
 
             _dataRegisterService.SetValue(lowbyte, 0);
-            _statusRegisterService.SetZeroFlag();
+            _statusRegisterService.SetBit(2);
         }
 
         public void comf(int Opcode)
@@ -360,11 +361,11 @@ namespace WpfApp_PIC.Anwednungsschicht
             carryflag = (leftRotated & 0b_100000000) >> 8;
             if (carryflag == 1)
             {
-                _statusRegisterService.SetCarryFlag();
+                _statusRegisterService.SetBit(0);
             }
             else
             {
-                _statusRegisterService.ResetCarryFlag();
+                _statusRegisterService.ResetBit(0);
             }
 
             int lowerEightBit = leftRotated & 0b_011111111;
@@ -389,11 +390,11 @@ namespace WpfApp_PIC.Anwednungsschicht
             carryflag = tmp & 0b_00000001;
             if (carryflag == 1)
             {
-                _statusRegisterService.SetCarryFlag();
+                _statusRegisterService.SetBit(0);
             }
             else
             {
-                _statusRegisterService.ResetCarryFlag();
+                _statusRegisterService.ResetBit(0);
             }
 
             setDestination(Opcode, rightRotated);
@@ -513,20 +514,20 @@ namespace WpfApp_PIC.Anwednungsschicht
 
             if (isOverflow(sum))
             {
-                _statusRegisterService.SetCarryFlag();
+                _statusRegisterService.SetBit(0);
             }
             else
             {
-                _statusRegisterService.ResetCarryFlag();
+                _statusRegisterService.ResetBit(0);
             }
 
             if (isHalfcarryOverflow(sum, val))
             {
-                _statusRegisterService.SetDCFlag();
+                _statusRegisterService.SetBit(1);
             }
             else
             {
-                _statusRegisterService.ResetDCFlag();
+                _statusRegisterService.ResetBit(1);
             }
 
             affectingZeroFLag(sum);
@@ -540,22 +541,22 @@ namespace WpfApp_PIC.Anwednungsschicht
 
             if (isHalfcarryUnderflow(dif))
             {
-                _statusRegisterService.ResetDCFlag();
+                _statusRegisterService.ResetBit(1);
             }
             else
             {
-                _statusRegisterService.SetDCFlag();
+                _statusRegisterService.SetBit(1);
             }
 
             if (isUnderflow(dif))
             {
-                _statusRegisterService.ResetCarryFlag();
+                _statusRegisterService.ResetBit(0);
                 dif = _w_registerService.GetValue() - literal;  //Bei Underflow muss dif aufgrund der 8 bit Architektur des PIC neu berechnet werden
                 dif = 256 - dif;    //Eigentlich dif = 255 - dif + 1
             }
             else
             {
-                _statusRegisterService.SetCarryFlag();
+                _statusRegisterService.SetBit(0);
             }
 
             _w_registerService.SetValue(dif);
@@ -632,8 +633,8 @@ namespace WpfApp_PIC.Anwednungsschicht
         {
             //0 -> WatchdogVorteiler und WDT = 0
 
-            _statusRegisterService.SetTOFlag();
-            _statusRegisterService.SetPDFlag();
+            _statusRegisterService.SetBit(4);
+            _statusRegisterService.SetBit(5);
         }
 
         public void sleep()

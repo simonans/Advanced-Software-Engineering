@@ -5,16 +5,18 @@ using System.Windows.Input;
 using WpfApp_PIC.Anwednungsschicht;
 using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
 using WpfApp_PIC.Domänenschicht;
+using WpfApp_PIC.Anwednungsschicht.DataRegisterServices;
+using System.ComponentModel;
 
 namespace WpfApp_PIC.Adapterschicht.ViewModel;
 
 public class DataRegisterViewModel : ViewModelBase
 {
     private readonly DataRegisterService _dataRegisterService;
-    private readonly StatusRegisterService _statusRegisterService;
-    private readonly PCLATHRegisterService _pclathRegisterService;
-    private readonly PCLRegisterService _pclRegisterService;
-    private readonly TMR0RegisterService _tmr0registerservice;
+    private readonly RegularSFR _statusRegisterService;
+    private readonly RegularSFR _pclathRegisterService;
+    private readonly RegularSFR _pclRegisterService;
+    private readonly RegularSFR _tmr0registerservice;
     private readonly PortService _portService;
 
     #region Datenspeicher Bank0 und Bank1
@@ -83,7 +85,7 @@ public class DataRegisterViewModel : ViewModelBase
     }
     #endregion
 
-    public DataRegisterViewModel(DataRegisterService dataRegisterService, StatusRegisterService statusRegisterService, PCLATHRegisterService pclathRegisterService, PCLRegisterService pclRegisterService, TMR0RegisterService tmr0RegisterService, PortService portService)
+    public DataRegisterViewModel(DataRegisterService dataRegisterService, RegularSFR statusRegisterService, RegularSFR pclathRegisterService, RegularSFR pclRegisterService, RegularSFR tmr0RegisterService, PortService portService)
     {
         _dataRegisterService = dataRegisterService;
         _statusRegisterService = statusRegisterService;
@@ -138,13 +140,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetCarryFlag();
+            return _statusRegisterService.GetBit(0);
         }
         set
         {
-            if (_statusRegisterService.GetCarryFlag() != value)
+            if (_statusRegisterService.GetBit(0) != value)
             {
-                _statusRegisterService.SetCarryFlag();
+                _statusRegisterService.SetBit(0);
                 OnPropertyChanged(nameof(CarryFlagBitValue));
             }
         }
@@ -154,13 +156,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetDCFlag();
+            return _statusRegisterService.GetBit(1);
         }
         set
         {
-            if (_statusRegisterService.GetDCFlag() != value)
+            if (_statusRegisterService.GetBit(1) != value)
             {
-                _statusRegisterService.SetDCFlag();
+                _statusRegisterService.SetBit(1);
                 OnPropertyChanged(nameof(DCFlagBitValue));
             }
         }
@@ -170,13 +172,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetZeroFlag();
+            return _statusRegisterService.GetBit(2);
         }
         set
         {
-            if (_statusRegisterService.GetZeroFlag() != value)
+            if (_statusRegisterService.GetBit(2) != value)
             {
-                _statusRegisterService.SetZeroFlag();
+                _statusRegisterService.SetBit(2);
                 OnPropertyChanged(nameof(ZeroFlagBitValue));
             }
         }
@@ -186,13 +188,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetPDFlag();
+            return _statusRegisterService.GetBit(3);
         }
         set
         {
-            if (_statusRegisterService.GetPDFlag() != value)
+            if (_statusRegisterService.GetBit(3) != value)
             {
-                _statusRegisterService.SetPDFlag();
+                _statusRegisterService.SetBit(3);
                 OnPropertyChanged(nameof(PDFlagBitValue));
             }
         }
@@ -202,13 +204,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetTOFlag();
+            return _statusRegisterService.GetBit(4);
         }
         set
         {
-            if (_statusRegisterService.GetTOFlag() != value)
+            if (_statusRegisterService.GetBit(4) != value)
             {
-                _statusRegisterService.SetTOFlag();
+                _statusRegisterService.SetBit(4);
                 OnPropertyChanged(nameof(TOFlagBitValue));
             }
         }
@@ -218,13 +220,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetRP0();
+            return _statusRegisterService.GetBit(5);
         }
         set
         {
-            if (_statusRegisterService.GetRP0() != value)
+            if (_statusRegisterService.GetBit(5) != value)
             {
-                _statusRegisterService.SetRP0();
+                _statusRegisterService.SetBit(5);
                 OnPropertyChanged(nameof(RP0BitValue));
             }
         }

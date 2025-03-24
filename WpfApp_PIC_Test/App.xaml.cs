@@ -10,6 +10,7 @@ using System.Net.WebSockets;
 using WpfApp_PIC.Pluginschicht.LST_File_Reader;
 using System.Reflection.PortableExecutable;
 using WpfApp_PIC.Adapterschicht.Parser;
+using WpfApp_PIC.Anwednungsschicht.DataRegisterServices;
 
 namespace WpfApp_PIC
 {
@@ -42,12 +43,13 @@ namespace WpfApp_PIC
             var stackService = new StackService(pic.GetStack());
             var wRegisterService = new W_RegisterService(pic.GetW_Register());
             var programMemoryService = new ProgramMemoryService(pic.GetProgramMemory());
-            var pclRegisterService = new PCLRegisterService(pic.GetDataRegister());
-            var pclathRegisterService = new PCLATHRegisterService(pic.GetDataRegister());
+
+            var pclRegisterService = new RegularSFR(pic.GetDataRegister(), 2);
+            var pclathRegisterService = new RegularSFR(pic.GetDataRegister(), 10);
             var programCounterService = new ProgramCounterService(pic.GetProgramCounter(), pclRegisterService, pclathRegisterService);
-            var dataRegisterService = new DataRegisterService(pic.GetDataRegister());         
-            var statusRegisterService = new StatusRegisterService(pic.GetDataRegister());
-            var tmr0RegisterService = new TMR0RegisterService(pic.GetDataRegister());
+            var dataRegisterService = new DataRegisterService(pic.GetDataRegister());
+            var statusRegisterService = new RegularSFR(pic.GetDataRegister(), 3);
+            var tmr0RegisterService = new RegularSFR(pic.GetDataRegister(), 1);
             var portService = new PortService(pic.GetDataRegister());
             // Anwendungsschicht initialisieren: Decoder und ExecutionModule
             var decoder = new Decoder(new Instructions(dataRegisterService, wRegisterService, stackService, programCounterService, statusRegisterService, tmr0RegisterService), programCounterService, programMemoryService);//////////////////////////////////////////////////////////////////////////////////////////
