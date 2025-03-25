@@ -45,17 +45,17 @@ namespace WpfApp_PIC.Domänenschicht
                 return _register[fsr];
             }
 
-            //else if (StorageOnBank1(index))
-            //    return _bank1[index];
+            else if (StorageOnBank1(index))
+                return _bank1[index];
 
             else 
                 return _register[index];
         }
 
-        //public int GetValueBank0(int index)
-        //{
-        //    return _register[index];
-        //}
+        public int GetValueBank0(int index)
+        {
+            return _register[index];
+        }
         public int GetValueBank1(int index)
         {
             return _bank1[index];

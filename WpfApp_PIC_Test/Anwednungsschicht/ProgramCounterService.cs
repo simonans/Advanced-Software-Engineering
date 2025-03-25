@@ -13,11 +13,11 @@ namespace WpfApp_PIC.Anwednungsschicht
     public class ProgramCounterService /*: IProgrammCounterUpdate*/
     {
         private ProgramCounter _programcounter;
-        private RegularSFR _pclRegisterService;
-        private RegularSFR _pclathRegisterService;
+        private RegularSFRService _pclRegisterService;
+        private RegularSFRService _pclathRegisterService;
         public event EventHandler ValueChanged;
 
-        public ProgramCounterService(ProgramCounter programcounter, RegularSFR pclRegisterService, RegularSFR pclathRegisterService)
+        public ProgramCounterService(ProgramCounter programcounter, RegularSFRService pclRegisterService, RegularSFRService pclathRegisterService)
         {
             _programcounter = programcounter;
             _pclRegisterService = pclRegisterService;

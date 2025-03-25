@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
 {
-    class Bank1Decorator : Decorator
+    class Bank1DecoratorService : Decorator
     {
-        public Bank1Decorator(ISFR successor) : base(successor) { }
+        public Bank1DecoratorService(ISFRService successor) : base(successor) { }
 
         public int GetValueTris()
         {

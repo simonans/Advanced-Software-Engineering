@@ -8,16 +8,16 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
 {
-    abstract class Decorator : ISFR
+    abstract class Decorator : ISFRService
     {
-        protected ISFR _successor;
+        protected ISFRService _successor;
         public event EventHandler ValueChanged
         {
             add { _successor.ValueChanged += value; }
             remove { _successor.ValueChanged -= value; }
         }
 
-        public Decorator(ISFR successor)
+        public Decorator(ISFRService successor)
         {
             _successor = successor;
         }

@@ -7,7 +7,7 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
 {
-    public class RegularSFR : ISFR
+    public class RegularSFRService : ISFRService
     {
         private DataRegister _dataRegister;
         private int _address;
@@ -15,7 +15,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
 
         public event EventHandler ValueChanged;
 
-        public RegularSFR(DataRegister dataRegister, int address) 
+        public RegularSFRService(DataRegister dataRegister, int address) 
         { 
             _dataRegister = dataRegister;
             _address = address;
@@ -42,7 +42,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
 
         public int GetValue()
         {
-            return _dataRegister.GetValue(_address);
+            return _dataRegister.GetValueBank0(_address);
         }
 
         public int GetBit(int BitNumber)

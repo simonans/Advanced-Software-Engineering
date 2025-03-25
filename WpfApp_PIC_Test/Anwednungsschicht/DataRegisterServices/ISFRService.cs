@@ -7,7 +7,7 @@ using WpfApp_PIC.Domänenschicht;
 
 namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
 {
-    public interface ISFR
+    public interface ISFRService
     {
         event EventHandler ValueChanged;
         DataRegister DataRegister { get; }

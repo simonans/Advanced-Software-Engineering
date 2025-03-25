@@ -13,10 +13,10 @@ namespace WpfApp_PIC.Anwednungsschicht
         readonly W_RegisterService _w_registerService;
         readonly StackService _stackService;
         readonly ProgramCounterService _programCounterService;
-        readonly RegularSFR _statusRegisterService;
-        readonly RegularSFR _TMR0RegisterService;
+        readonly RegularSFRService _statusRegisterService;
+        readonly RegularSFRService _TMR0RegisterService;
 
-        public Instructions(DataRegisterService dataRegisterService, W_RegisterService w_RegisterService, StackService stackService, ProgramCounterService programCounterService, RegularSFR statusRegisterService, RegularSFR tMR0RegisterService)
+        public Instructions(DataRegisterService dataRegisterService, W_RegisterService w_RegisterService, StackService stackService, ProgramCounterService programCounterService, RegularSFRService statusRegisterService, RegularSFRService tMR0RegisterService)
         {
             _dataRegisterService = dataRegisterService;
             _w_registerService = w_RegisterService;

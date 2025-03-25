@@ -13,11 +13,12 @@ namespace WpfApp_PIC.Adapterschicht.ViewModel;
 public class DataRegisterViewModel : ViewModelBase
 {
     private readonly DataRegisterService _dataRegisterService;
-    private readonly RegularSFR _statusRegisterService;
-    private readonly RegularSFR _pclathRegisterService;
-    private readonly RegularSFR _pclRegisterService;
-    private readonly RegularSFR _tmr0registerservice;
-    private readonly PortService _portService;
+    private readonly RegularSFRService _statusRegisterService;
+    private readonly RegularSFRService _pclathRegisterService;
+    private readonly RegularSFRService _pclRegisterService;
+    private readonly RegularSFRService _tmr0registerservice;
+    private readonly Bank1DecoratorService _portAService;
+    private readonly Bank1DecoratorService _portBService;
 
     #region Datenspeicher Bank0 und Bank1
     private int _registerIndex;
@@ -85,14 +86,15 @@ public class DataRegisterViewModel : ViewModelBase
     }
     #endregion
 
-    public DataRegisterViewModel(DataRegisterService dataRegisterService, RegularSFR statusRegisterService, RegularSFR pclathRegisterService, RegularSFR pclRegisterService, RegularSFR tmr0RegisterService, PortService portService)
+    public DataRegisterViewModel(DataRegisterService dataRegisterService, RegularSFRService statusRegisterService, RegularSFRService pclathRegisterService, RegularSFRService pclRegisterService, RegularSFRService tmr0RegisterService, RegularSFRService portAServiceBase, RegularSFRService portBServiceBase)
     {
         _dataRegisterService = dataRegisterService;
         _statusRegisterService = statusRegisterService;
         _pclathRegisterService = pclathRegisterService;
         _pclRegisterService = pclRegisterService;
         _tmr0registerservice = tmr0RegisterService;
-        _portService = portService;
+        _portAService = new Bank1DecoratorService(portAServiceBase);
+        _portBService = new Bank1DecoratorService(portBServiceBase);
 
         LoadRegisterValues();
         LoadBank1Values();
@@ -124,10 +126,10 @@ public class DataRegisterViewModel : ViewModelBase
         _pclathRegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PCLATHRegisterValue));
         _pclRegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PCLRegisterValue));
         _tmr0registerservice.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TMR0RegisterValue));
-        _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PortRA));
-        _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PortRB));
-        _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TrisRA));
-        _portService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TrisRB));
+        _portAService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PortRA));
+        _portBService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PortRB));
+        _portAService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TrisRA));
+        _portBService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TrisRB));
         #endregion
 
 
@@ -285,13 +287,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _portService.GetValuePortRA();
+            return _portAService.GetValue();
         }
         set
         {
-            if (_portService.GetValuePortRA() != value)
+            if (_portAService.GetValue() != value)
             {
-                _portService.SetValuePort(value, 5);
+                _portAService.SetValue(value);
                 OnPropertyChanged(nameof(PortRA));
             }
         }
@@ -300,13 +302,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _portService.GetValuePortBB();
+            return _portBService.GetValue();
         }
         set
         {
-            if (_portService.GetValuePortBB() != value)
+            if (_portBService.GetValue() != value)
             {
-                _portService.SetValuePort(value, 6);
+                _portBService.SetValue(value);
                 OnPropertyChanged(nameof(PortRB));
             }
         }
@@ -315,13 +317,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _portService.GetValueTrisRA();
+            return _portAService.GetValueTris();
         }
         set
         {
-            if (_portService.GetValueTrisRA() != value)
+            if (_portAService.GetValueTris() != value)
             {
-                _portService.SetValuePort(value, 5);
+                _portAService.SetValue(value);
                 OnPropertyChanged(nameof(TrisRA));
             }
         }
@@ -330,13 +332,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _portService.GetValueTrisRB();
+            return _portBService.GetValueTris();
         }
         set
         {
-            if (_portService.GetValueTrisRB() != value)
+            if (_portBService.GetValueTris() != value)
             {
-                _portService.SetValuePort(value, 6);
+                _portBService.SetValue(value);
                 OnPropertyChanged(nameof(TrisRB));
             }
         }
