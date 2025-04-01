@@ -1,34 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+using System.ComponentModel;
 using WpfApp_PIC.Anwednungsschicht;
 
 namespace WpfApp_PIC.Adapterschicht.ViewModel
 {
-    public class W_RegisterViewModel : ViewModelBase
+    public class W_RegisterViewModel
     {
         private readonly W_RegisterService _w_RegisterService;
+        private readonly PropertyChangedNotifier _notifier = new PropertyChangedNotifier();
+
+        public event PropertyChangedEventHandler PropertyChanged
+        {
+            add { _notifier.PropertyChanged += value; }
+            remove { _notifier.PropertyChanged -= value; }
+        }
 
         public W_RegisterViewModel(W_RegisterService w_RegisterService)
         {
             _w_RegisterService = w_RegisterService;
-            _w_RegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(WValue));
+            _w_RegisterService.ValueChanged += (sender, args) => _notifier.OnPropertyChanged(nameof(WValue));
         }
+
         public int WValue
         {
-            get
-            {
-                return _w_RegisterService.GetValue();
-            }
+            get => _w_RegisterService.GetValue();
             set
             {
                 if (_w_RegisterService.GetValue() != value)
                 {
                     _w_RegisterService.SetValue(value);
-                    OnPropertyChanged(nameof(WValue));
+                    _notifier.OnPropertyChanged(nameof(WValue));
                 }
             }
         }
