@@ -16,7 +16,6 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
         void ResetBit(int BitNumber);
         int GetValue();
         int GetBit(int BitNumber);
-        void IncreaseValue();
         void OnValueChanged();
     }
 }

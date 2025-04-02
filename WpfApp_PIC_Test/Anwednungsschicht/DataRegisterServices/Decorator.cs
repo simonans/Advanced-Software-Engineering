@@ -29,7 +29,6 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
         public void ResetBit(int BitNumber) { _successor.ResetBit(BitNumber); }
         public int GetValue()  {return _successor.GetValue(); }
         public int GetBit(int BitNumber) { return _successor.GetBit(BitNumber); }
-        public void IncreaseValue() { _successor.IncreaseValue(); }
         public virtual void OnValueChanged() { _successor.OnValueChanged(); }
     }
 }
