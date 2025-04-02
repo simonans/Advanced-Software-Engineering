@@ -55,7 +55,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
             OnValueChanged();
         }
 
-        protected virtual void OnValueChanged()
+        public virtual void OnValueChanged()
         {
             ValueChanged?.Invoke(this, EventArgs.Empty);
         }
