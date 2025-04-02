@@ -12,7 +12,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
 
         public int GetValueTris()
         {
-            return _successor.DataRegister.GetValueBank1(3);
+            return _successor.GetDataRegister().GetValueBank1(3);
         }
         
     }

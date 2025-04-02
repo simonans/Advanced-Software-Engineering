@@ -21,7 +21,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
             _address = address;
         }
 
-        public DataRegister DataRegister { get { return _dataRegister; } }
+        public DataRegister GetDataRegister() { return _dataRegister; }
 
         public void SetValue(int Value)
         {
