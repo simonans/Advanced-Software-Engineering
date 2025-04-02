@@ -10,7 +10,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
     public interface ISFRService
     {
         event EventHandler ValueChanged;
-        DataRegister GetDataRegister();
+        DataRegister DataRegister { get; }
         void SetValue(int Value);
         void SetBit(int BitNumber);
         void ResetBit(int BitNumber);

@@ -22,8 +22,7 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
             _successor = successor;
         }
 
-        public DataRegister GetDataRegister() { return _successor.GetDataRegister(); }
-
+        public DataRegister DataRegister { get { return _successor.DataRegister; } }
         public void SetValue(int Value) { _successor.SetValue(Value); }
         public void SetBit(int BitNumber) { _successor.SetBit(BitNumber); }
         public void ResetBit(int BitNumber) { _successor.ResetBit(BitNumber); }
