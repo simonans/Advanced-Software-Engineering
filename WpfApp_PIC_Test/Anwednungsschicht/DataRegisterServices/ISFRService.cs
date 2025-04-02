@@ -12,7 +12,6 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
         event EventHandler ValueChanged;
         DataRegister DataRegister { get; }
         
-        int Address { get; }
         void SetValue(int Value);
         void SetBit(int BitNumber);
         void ResetBit(int BitNumber);

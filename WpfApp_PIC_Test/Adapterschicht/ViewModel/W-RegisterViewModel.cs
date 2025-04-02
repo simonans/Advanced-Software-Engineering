@@ -18,7 +18,7 @@ namespace WpfApp_PIC.Adapterschicht.ViewModel
         public W_RegisterViewModel(W_RegisterService w_RegisterService)
         {
             _w_RegisterService = w_RegisterService;
-            _w_RegisterService.ValueChanged += (sender, args) => _notifier.OnPropertyChanged(nameof(WValue));
+            _w_RegisterService.ValueChanged += (sender, args) => _notifier.OnPropertyChanged(this.WValue, nameof(WValue));
         }
 
         public int WValue

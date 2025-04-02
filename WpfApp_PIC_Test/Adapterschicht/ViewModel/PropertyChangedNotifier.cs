@@ -13,6 +13,11 @@ namespace WpfApp_PIC.Adapterschicht.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public virtual void OnPropertyChanged(object sender, [CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(sender, new PropertyChangedEventArgs(propertyName));
+        }
+
         protected bool SetProperty<T>(ref T backingField, T value, [CallerMemberName] string propertyName = null)
         {
             if (Equals(backingField, value)) return false;
