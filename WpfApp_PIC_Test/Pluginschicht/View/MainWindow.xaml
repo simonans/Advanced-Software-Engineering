@@ -175,6 +175,15 @@
                             HorizontalAlignment="Center" TextAlignment="Center"/>
                         </StackPanel>
                     </Border>
+
+                    <Border BorderBrush="Black" BorderThickness="1" Padding="5" Width="80">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Status-Reg" HorizontalAlignment="Center" TextAlignment="Center"/>
+                            <Border Height="1" Background="Gray" Margin="0,5" />
+                            <TextBlock Text="{Binding dataRegisterViewModel.StatusRegisterValue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                            HorizontalAlignment="Center" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
                 </StackPanel>
                 <!-- Anzeigen des ProgramCounters und W-Registers-->
                 <StackPanel Margin="20,0,0,0">

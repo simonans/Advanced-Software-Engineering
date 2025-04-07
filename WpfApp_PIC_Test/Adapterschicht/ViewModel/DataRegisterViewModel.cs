@@ -16,7 +16,7 @@ public class DataRegisterViewModel : ViewModelBase
     private readonly BitManipulationDecoratorService _statusRegisterService;
     private readonly RegularSFRService _pclathRegisterService;
     private readonly RegularSFRService _pclRegisterService;
-    private readonly RegularSFRService _tmr0registerservice;
+    private readonly RegularSFRService _tmr0RegisterService;
     private readonly Bank1DecoratorService _portAService;
     private readonly Bank1DecoratorService _portBService;
 
@@ -92,7 +92,7 @@ public class DataRegisterViewModel : ViewModelBase
         _statusRegisterService = new BitManipulationDecoratorService(statusRegisterServiceBase);
         _pclathRegisterService = pclathRegisterService;
         _pclRegisterService = pclRegisterService;
-        _tmr0registerservice = tmr0RegisterService;
+        _tmr0RegisterService = tmr0RegisterService;
         _portAService = new Bank1DecoratorService(portAServiceBase);
         _portBService = new Bank1DecoratorService(portBServiceBase);
 
@@ -125,7 +125,7 @@ public class DataRegisterViewModel : ViewModelBase
         #region SFRs (Special Function Registers) aktualisieren
         _pclathRegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PCLATHRegisterValue));
         _pclRegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PCLRegisterValue));
-        _tmr0registerservice.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TMR0RegisterValue));
+        _tmr0RegisterService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TMR0RegisterValue));
         _portAService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PortRA));
         _portBService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(PortRB));
         _portAService.ValueChanged += (sender, args) => OnPropertyChanged(nameof(TrisRA));
@@ -271,14 +271,30 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _tmr0registerservice.GetValue();
+            return _tmr0RegisterService.GetValue();
         }
         set
         {
-            if (_tmr0registerservice.GetValue() != value)
+            if (_tmr0RegisterService.GetValue() != value)
             {
-                _tmr0registerservice.SetValue(value);
+                _tmr0RegisterService.SetValue(value);
                 OnPropertyChanged(nameof(TMR0RegisterValue));
+            }
+        }
+    }
+
+    public int StatusRegisterValue
+    {
+        get
+        {
+            return _statusRegisterService.GetValue();
+        }
+        set
+        {
+            if (_statusRegisterService.GetValue() != value)
+            {
+                _statusRegisterService.SetValue(value);
+                OnPropertyChanged(nameof(StatusRegisterValue));
             }
         }
     }
