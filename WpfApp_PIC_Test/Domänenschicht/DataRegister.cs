@@ -73,7 +73,7 @@ namespace WpfApp_PIC.Domänenschicht
                 if (index < NUMBER_OF_SPECIAL_FUNCTION_REGISTERS)
                 {
                     _bank1[index] = value;
-                    SpecialRegisterHandler(index, value);
+                    HandleSpecialRegister(index, value);
                 }
             }
         }
@@ -173,7 +173,7 @@ namespace WpfApp_PIC.Domänenschicht
             SetProgramCounter(tmp);
         }
 
-        private void SpecialRegisterHandler(int register, int value)
+        private void HandleSpecialRegister(int register, int value)
         {
             switch (register)
             {

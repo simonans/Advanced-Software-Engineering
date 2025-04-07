@@ -48,17 +48,17 @@ namespace WpfApp_PIC
             var pclathRegisterService = new RegularSFRService(pic.GetDataRegister(), 10);
             var programCounterService = new ProgramCounterService(pic.GetProgramCounter(), pclRegisterService, pclathRegisterService);
             var dataRegisterService = new DataRegisterService(pic.GetDataRegister());
-            var statusRegisterService = new RegularSFRService(pic.GetDataRegister(), 3);
+            var statusRegisterServiceBase = new RegularSFRService(pic.GetDataRegister(), 3);
             var tmr0RegisterService = new RegularSFRService(pic.GetDataRegister(), 1);
 
             var portAServiceBase = new RegularSFRService(pic.GetDataRegister(), 5);
             var portBServiceBase = new RegularSFRService (pic.GetDataRegister(), 6);
             // Anwendungsschicht initialisieren: Decoder und ExecutionModule
-            var decoder = new Decoder(new Instructions(dataRegisterService, wRegisterService, stackService, programCounterService, statusRegisterService, tmr0RegisterService), programCounterService, programMemoryService);//////////////////////////////////////////////////////////////////////////////////////////
+            var decoder = new Decoder(new Instructions(dataRegisterService, wRegisterService, stackService, programCounterService, statusRegisterServiceBase, tmr0RegisterService), programCounterService, programMemoryService);//////////////////////////////////////////////////////////////////////////////////////////
             var executionModule = new ExecutionModule(decoder);
 
             // Adapterschicht initialisieren: ViewModel
-            var dataRegisterViewModel = new DataRegisterViewModel(dataRegisterService, statusRegisterService, pclathRegisterService, pclRegisterService, tmr0RegisterService, portAServiceBase, portBServiceBase);
+            var dataRegisterViewModel = new DataRegisterViewModel(dataRegisterService, statusRegisterServiceBase, pclathRegisterService, pclRegisterService, tmr0RegisterService, portAServiceBase, portBServiceBase);
             var stackViewModel = new StackViewModel(stackService);
             var programCounterViewModel = new ProgramCounterViewModel(programCounterService);
             var w_RegisterViewModel = new W_RegisterViewModel(wRegisterService);

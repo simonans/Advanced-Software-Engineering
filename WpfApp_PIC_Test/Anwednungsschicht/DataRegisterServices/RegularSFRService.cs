@@ -21,10 +21,9 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
             _address = address;
         }
 
-        public DataRegister DataRegister
-        {
-            get { return _dataRegister; }
-        }
+        public DataRegister DataRegister { get { return _dataRegister; } }
+
+        public int Address { get { return _address; } }
 
         public void SetValue(int Value)
         {
@@ -32,24 +31,9 @@ namespace WpfApp_PIC.Anwednungsschicht.DataRegisterServices
             OnValueChanged();
         }
 
-        public void SetBit(int BitnUmber)
-        {
-            _dataRegister.SetBit(_address, BitnUmber, true);
-        }
-
-        public void ResetBit(int BitnUmber)
-        {
-            _dataRegister.SetBit(_address, BitnUmber, false);
-        }
-
         public int GetValue()
         {
             return _dataRegister.GetValueBank0(_address);
-        }
-
-        public int GetBit(int BitNumber)
-        {
-            return _dataRegister.GetBit(_address, BitNumber);
         }
 
 

@@ -13,7 +13,7 @@ namespace WpfApp_PIC.Adapterschicht.ViewModel;
 public class DataRegisterViewModel : ViewModelBase
 {
     private readonly DataRegisterService _dataRegisterService;
-    private readonly RegularSFRService _statusRegisterService;
+    private readonly BitManipulationDecoratorService _statusRegisterService;
     private readonly RegularSFRService _pclathRegisterService;
     private readonly RegularSFRService _pclRegisterService;
     private readonly RegularSFRService _tmr0registerservice;
@@ -86,10 +86,10 @@ public class DataRegisterViewModel : ViewModelBase
     }
     #endregion
 
-    public DataRegisterViewModel(DataRegisterService dataRegisterService, RegularSFRService statusRegisterService, RegularSFRService pclathRegisterService, RegularSFRService pclRegisterService, RegularSFRService tmr0RegisterService, RegularSFRService portAServiceBase, RegularSFRService portBServiceBase)
+    public DataRegisterViewModel(DataRegisterService dataRegisterService, RegularSFRService statusRegisterServiceBase, RegularSFRService pclathRegisterService, RegularSFRService pclRegisterService, RegularSFRService tmr0RegisterService, RegularSFRService portAServiceBase, RegularSFRService portBServiceBase)
     {
         _dataRegisterService = dataRegisterService;
-        _statusRegisterService = statusRegisterService;
+        _statusRegisterService = new BitManipulationDecoratorService(statusRegisterServiceBase);
         _pclathRegisterService = pclathRegisterService;
         _pclRegisterService = pclRegisterService;
         _tmr0registerservice = tmr0RegisterService;
