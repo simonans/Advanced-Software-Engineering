@@ -31,7 +31,7 @@ namespace WpfApp_PIC.Anwednungsschicht
         //8 Bits abgeschnitten
         #region Hilfsfunktionen zu BYTE-ORIENTED FILE REGISTER OPERATIONS
 
-        //Lowbyte -eigentlixh nur die unteren 7 bits- (zum verarbeiten im Befehl) zurückgeben 
+        //Lowbyte -eigentlich nur die unteren 7 bits- (zum verarbeiten im Befehl) zurückgeben 
         private int extractLowbyteOpcode(int Opcode)
         {
             int lowbyte;
