@@ -4,6 +4,7 @@
 
 ### Tests ausführen mit Code Coverage
 
+Im <...>\Advanced-Software-Engineering\Tests\"-Ordner:    
 ```bash
 dotnet test --collect:"XPlat Code Coverage"
 reportgenerator -reports:"TestResults/<zufällig erzeugter Ordner>/coverage.cobertura.xml" -targetdir:"CoverageReport"
