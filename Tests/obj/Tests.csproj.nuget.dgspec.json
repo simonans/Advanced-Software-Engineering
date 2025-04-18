@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\Tests\\Tests.csproj": {}
+    "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\Tests\\Tests.csproj": {
+    "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\Tests\\Tests.csproj",
+        "projectUniqueName": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\siman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\Tests\\obj\\",
+        "projectPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\Mario\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\siman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows7.0",
             "projectReferences": {
-              "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj": {
-                "projectPath": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj"
+              "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj": {
+                "projectPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj"
               }
             }
           }
@@ -43,7 +47,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -54,8 +59,10 @@
               "version": "[17.8.0, )"
             },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.4, )"
             },
             "xunit": {
               "target": "Package",
@@ -82,21 +89,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj": {
+    "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
+        "projectUniqueName": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
         "projectName": "WpfApp_PIC",
-        "projectPath": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
-        "packagesPath": "C:\\Users\\siman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\siman\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\obj\\",
+        "projectPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
+        "packagesPath": "C:\\Users\\Mario\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\siman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -121,7 +132,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -145,7 +157,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
