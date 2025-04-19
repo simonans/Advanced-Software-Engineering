@@ -60,7 +60,7 @@ namespace WpfApp_PIC.Pluginschicht.LST_File_Reader
                 MessageBox.Show("Die Datei existiert nicht.");
             }
         }
-        private bool IsWhiteSpace(string line, int currentIndex)
+        internal bool IsWhiteSpace(string line, int currentIndex)
         {
             bool isWhiteSpace = false;
             if (line.ElementAt(currentIndex) == ' ')

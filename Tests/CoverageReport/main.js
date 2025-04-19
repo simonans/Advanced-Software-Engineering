@@ -228,7 +228,7 @@ var assemblies = [
       { "name": "WpfApp_PIC.Anwednungsschicht.DataRegisterServices.BitManipulationDecoratorService", "rp": "WpfApp_PIC_BitManipulationDecoratorService.html", "cl": 0, "ucl": 10, "cal": 10, "tl": 30, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Anwednungsschicht.DataRegisterServices.Decorator", "rp": "WpfApp_PIC_Decorator.html", "cl": 0, "ucl": 11, "cal": 11, "tl": 31, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Anwednungsschicht.DataRegisterServices.RegularSFRService", "rp": "WpfApp_PIC_RegularSFRService.html", "cl": 0, "ucl": 17, "cal": 17, "tl": 45, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "WpfApp_PIC.Anwednungsschicht.DatenspeicherService.DataRegisterService", "rp": "WpfApp_PIC_DataRegisterService.html", "cl": 0, "ucl": 27, "cal": 27, "tl": 59, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "WpfApp_PIC.Anwednungsschicht.DatenspeicherService.DataRegisterService", "rp": "WpfApp_PIC_DataRegisterService.html", "cl": 14, "ucl": 13, "cal": 27, "tl": 59, "cb": 1, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Anwednungsschicht.Decoder", "rp": "WpfApp_PIC_Decoder.html", "cl": 0, "ucl": 114, "cal": 114, "tl": 250, "cb": 0, "tb": 63, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Anwednungsschicht.ExecutionModule", "rp": "WpfApp_PIC_ExecutionModule.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 19, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Anwednungsschicht.Instructions", "rp": "WpfApp_PIC_Instructions.html", "cl": 0, "ucl": 388, "cal": 388, "tl": 661, "cb": 0, "tb": 56, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
@@ -238,14 +238,14 @@ var assemblies = [
       { "name": "WpfApp_PIC.Anwednungsschicht.StackService", "rp": "WpfApp_PIC_StackService.html", "cl": 0, "ucl": 19, "cal": 19, "tl": 40, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Anwednungsschicht.W_RegisterService", "rp": "WpfApp_PIC_W_RegisterService.html", "cl": 0, "ucl": 14, "cal": 14, "tl": 36, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.App", "rp": "WpfApp_PIC_App.html", "cl": 0, "ucl": 46, "cal": 46, "tl": 168, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "WpfApp_PIC.Domänenschicht.DataRegister", "rp": "WpfApp_PIC_DataRegister.html", "cl": 0, "ucl": 119, "cal": 119, "tl": 199, "cb": 0, "tb": 40, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "WpfApp_PIC.Domänenschicht.DataRegister", "rp": "WpfApp_PIC_DataRegister.html", "cl": 89, "ucl": 30, "cal": 119, "tl": 199, "cb": 33, "tb": 40, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Domänenschicht.ProgramCounter", "rp": "WpfApp_PIC_ProgramCounter.html", "cl": 0, "ucl": 23, "cal": 23, "tl": 48, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Domänenschicht.ProgramMemory", "rp": "WpfApp_PIC_ProgramMemory.html", "cl": 0, "ucl": 15, "cal": 15, "tl": 37, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Domänenschicht.Stack", "rp": "WpfApp_PIC_Stack.html", "cl": 0, "ucl": 32, "cal": 32, "tl": 55, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Domänenschicht.W_Register", "rp": "WpfApp_PIC_W_Register.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Pluginschicht.LST_File_Reader.LST_File_Reader", "rp": "WpfApp_PIC_LST_File_Reader.html", "cl": 0, "ucl": 40, "cal": 40, "tl": 73, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "WpfApp_PIC.Pluginschicht.View.MainWindow", "rp": "WpfApp_PIC_MainWindow.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 298, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "XamlGeneratedNamespace.GeneratedInternalTypeHelper", "rp": "WpfApp_PIC_GeneratedInternalTypeHelper.html", "cl": 0, "ucl": 19, "cal": 19, "tl": 62, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "XamlGeneratedNamespace.GeneratedInternalTypeHelper", "rp": "WpfApp_PIC_GeneratedInternalTypeHelper.html", "cl": 0, "ucl": 19, "cal": 19, "tl": 61, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
@@ -270,24 +270,6 @@ var riskHotspots = [
     "metrics": [
       { "value": 110, "exceeded": true },
       { "value": 10, "exceeded": false },
-    ]},
-  {
-    "assembly": "WpfApp_PIC", "class": "WpfApp_PIC.Domänenschicht.DataRegister", "reportPath": "WpfApp_PIC_DataRegister.html", "methodName": "SetValue(System.Int32,System.Int32)", "methodShortName": "SetValue(...)", "fileIndex": 0, "line": 64,
-    "metrics": [
-      { "value": 110, "exceeded": true },
-      { "value": 10, "exceeded": false },
-    ]},
-  {
-    "assembly": "WpfApp_PIC", "class": "WpfApp_PIC.Domänenschicht.DataRegister", "reportPath": "WpfApp_PIC_DataRegister.html", "methodName": "DifferentStorageOnBank1(System.Int32)", "methodShortName": "DifferentStorageOnBank1(...)", "fileIndex": 0, "line": 125,
-    "metrics": [
-      { "value": 110, "exceeded": true },
-      { "value": 10, "exceeded": false },
-    ]},
-  {
-    "assembly": "WpfApp_PIC", "class": "WpfApp_PIC.Domänenschicht.DataRegister", "reportPath": "WpfApp_PIC_DataRegister.html", "methodName": "HandleSpecialRegister(System.Int32,System.Int32)", "methodShortName": "HandleSpecialRegister(...)", "fileIndex": 0, "line": 177,
-    "metrics": [
-      { "value": 72, "exceeded": true },
-      { "value": 8, "exceeded": false },
     ]},
   {
     "assembly": "WpfApp_PIC", "class": "WpfApp_PIC.Pluginschicht.LST_File_Reader.LST_File_Reader", "reportPath": "WpfApp_PIC_LST_File_Reader.html", "methodName": "ReadFile(System.String,WpfApp_PIC.Domänenschicht.ProgramMemory)", "methodShortName": "ReadFile(...)", "fileIndex": 0, "line": 20,
