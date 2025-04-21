@@ -210,3 +210,5 @@ D:\Git\source\repos\Advanced-Software-Engineering\Tests\obj\Debug\net8.0-windows
 D:\Git\source\repos\Advanced-Software-Engineering\Tests\obj\Debug\net8.0-windows7.0\Tests.pdb
 D:\Git\source\repos\Advanced-Software-Engineering\Tests\obj\Debug\net8.0-windows7.0\Tests.genruntimeconfig.cache
 D:\Git\source\repos\Advanced-Software-Engineering\Tests\obj\Debug\net8.0-windows7.0\ref\Tests.dll
+D:\Git\source\repos\Advanced-Software-Engineering\Tests\bin\Debug\net8.0-windows7.0\Castle.Core.dll
+D:\Git\source\repos\Advanced-Software-Engineering\Tests\bin\Debug\net8.0-windows7.0\Moq.dll

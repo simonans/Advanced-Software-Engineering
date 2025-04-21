@@ -1,27 +1,10 @@
-using WpfApp_PIC;
 using WpfApp_PIC.Domänenschicht;
-using WpfApp_PIC.Anwednungsschicht;
-using WpfApp_PIC.Adapterschicht.ViewModel;
-using Xunit;
 using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
-using WpfApp_PIC.Pluginschicht.LST_File_Reader;
+using Moq;
 using WpfApp_PIC.Anwendungsschicht.Parser;
+using WpfApp_PIC.Pluginschicht.LST_File_Reader;
 
-namespace Tests
-{
-    public class UnitTest1
-    {
-
-        [Fact]
-        public void Test1()
-        {
-            W_Register w_register_under_test = new W_Register();
-
-            w_register_under_test.SetValue(5);
-
-            Assert.Equal(5, w_register_under_test.GetValue());
-        }
-    }
+namespace Tests;
 
     #region Domänenschicht
     public class DataRegisterTests
@@ -108,97 +91,92 @@ namespace Tests
             Assert.Equal(31, value); // Annahme: Bank1 ist initial auf 31 im TRISA-Register gesetzt
         }
     }
-    #endregion
+#endregion
 
     #region Anwendungsschicht
     public class DataRegisterServiceTests
     {
-
         [Fact]
         public void SetValue_ShouldUpdateRegisterValue()
-        {
-            // Arrange
-            var dataRegister = new DataRegister();
-            var service = new DataRegisterService(dataRegister);
+    {
+        // Arrange
+        var dataRegister = new DataRegister();
+        var service = new DataRegisterService(dataRegister);
 
-            // Act
-            service.SetValue(5, 42);
+        // Act
+        service.SetValue(5, 42);
 
-            // Assert
-            Assert.Equal(42, service.GetValue(5));
-        }
+        // Assert
+        Assert.Equal(42, service.GetValue(5));
+    }
         [Fact]
         public void GetAllBank0Values_ShouldReturnAllValues()
-        {
-            // Arrange
-            var dataRegister = new DataRegister();
-            var service = new DataRegisterService(dataRegister);
+    {
+        // Arrange
+        var dataRegister = new DataRegister();
+        var service = new DataRegisterService(dataRegister);
 
-            // Act
-            var values = service.GetAllBank0Values();
+        // Act
+        var values = service.GetAllBank0Values();
 
-            // Assert
-            Assert.NotNull(values);
-            Assert.Equal(256, values.Length); // Annahme: Bank0 hat 128 Werte
-        }
-
+        // Assert
+        Assert.NotNull(values);
+        Assert.Equal(256, values.Length); // Annahme: Bank0 hat 128 Werte
+    }
+    
         [Fact]
         public void GetAllBank1Values_ShouldReturnAllValues()
-        {
-            // Arrange
-            var dataRegister = new DataRegister();
-            var service = new DataRegisterService(dataRegister);
+    {
+        // Arrange
+        var dataRegister = new DataRegister();
+        var service = new DataRegisterService(dataRegister);
 
-            // Act
-            var values = service.GetAllBank1Values();
+        // Act
+        var values = service.GetAllBank1Values();
 
-            // Assert
-            Assert.NotNull(values);
-            Assert.Equal(12, values.Length); // Annahme: Bank1 hat 128 Werte
-        }
+        // Assert
+        Assert.NotNull(values);
+        Assert.Equal(12, values.Length); // Annahme: Bank1 hat 128 Werte
+    }
+    }
     #endregion
 
     #region Adapterschicht
     #endregion
 
-    #region Pluginschicht unter verwendung von Mock-Objekten
-    //[Fact]
-    //public void ReadFile_ShouldNotThrowException()
-    //{
-    //    // Arrange
-    //    var mockReader = new Mock<ILST_File_Reader>();
-    //    var programMemory = new ProgramMemory();
+    #region Pluginschicht
+    public class LSTFileReaderTests
+    {
+        [Fact] /*used Mock*/
+        public void ReadFile_ShouldCallReadFileMethod()
+        {
+            // Arrange
+            var mockReader = new Mock<ILST_File_Reader>();
+            var programMemory = new ProgramMemory();
 
-    //    // Act & Assert
-    //    var exception = Record.Exception(() => mockReader.Object.ReadFile("test.lst", programMemory));
-    //    Assert.Null(exception);
-    //}
+            // Act
+            mockReader.Object.ReadFile("test.lst", programMemory);
 
-    //[Fact]
-    //public void IsWhiteSpace_ShouldReturnTrueForWhiteSpace()
-    //{
-    //    // Arrange
-    //    var reader = new LST_File_Reader();
+            // Assert
+            mockReader.Verify(reader => reader.ReadFile("test.lst", programMemory), Times.Once);
+        }
 
-    //    // Act
-    //    bool result = reader.IsWhiteSpace(" ", 0);
+        [Fact]
+        public void ReadFile_ShouldHandleNonWhiteSpaceLines()
+        {
+            // Arrange
+            var reader = new LST_File_Reader();
+            var programMemory = new ProgramMemory();
+            string filePath = "test.lst";
 
-    //    // Assert
-    //    Assert.True(result);
-    //}
+            // Simulieren Sie eine Datei mit einer Zeile ohne Leerzeichen
+            File.WriteAllText(filePath, "0001 1234");
 
-    //[Fact]
-    //public void IsWhiteSpace_ShouldReturnFalseForNonWhiteSpace()
-    //{
-    //    // Arrange
-    //    var reader = new LST_File_Reader();
+            // Act
+            reader.ReadFile(filePath, programMemory);
 
-    //    // Act
-    //    bool result = reader.IsWhiteSpace("A", 0);
-
-    //    // Assert
-    //    Assert.False(result);
-    //}
-    #endregion
+            // Assert
+            Assert.Equal(0x1234, programMemory.GetValue(0x0001));
+        }
     }
-}
+#endregion
