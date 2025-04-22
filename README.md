@@ -16,3 +16,7 @@ reportgenerator -reports:"../Tests/TestResults/<zufällig erzeugter Ordner>/cove
 => "Advanced-Software-Engineering/TestResults"  
 => "Advanced-Software-Engineering/CoverageReport" -> "Advanced-Software-Engineering/CoverageReport/index.html" für Visualisierung der CodeCoverage
 
+Anzeigen 
+```bash
+start CoverageReport/index.html
+```
