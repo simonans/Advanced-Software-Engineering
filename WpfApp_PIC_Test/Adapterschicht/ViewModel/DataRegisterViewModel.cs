@@ -144,13 +144,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetBit(0);
+            return _statusRegisterService.GetBit(PICConstants.CARRY_BIT);
         }
         set
         {
-            if (_statusRegisterService.GetBit(0) != value)
+            if (_statusRegisterService.GetBit(PICConstants.CARRY_BIT) != value)
             {
-                _statusRegisterService.SetBit(0);
+                _statusRegisterService.SetBit(PICConstants.CARRY_BIT);
                 OnPropertyChanged(nameof(CarryFlagBitValue));
             }
         }
@@ -160,13 +160,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetBit(1);
+            return _statusRegisterService.GetBit(PICConstants.DC_BIT);
         }
         set
         {
-            if (_statusRegisterService.GetBit(1) != value)
+            if (_statusRegisterService.GetBit(PICConstants.DC_BIT) != value)
             {
-                _statusRegisterService.SetBit(1);
+                _statusRegisterService.SetBit(PICConstants.DC_BIT);
                 OnPropertyChanged(nameof(DCFlagBitValue));
             }
         }
@@ -176,13 +176,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetBit(2);
+            return _statusRegisterService.GetBit(PICConstants.ZEROFLAG_BIT);
         }
         set
         {
-            if (_statusRegisterService.GetBit(2) != value)
+            if (_statusRegisterService.GetBit(PICConstants.ZEROFLAG_BIT) != value)
             {
-                _statusRegisterService.SetBit(2);
+                _statusRegisterService.SetBit(PICConstants.ZEROFLAG_BIT);
                 OnPropertyChanged(nameof(ZeroFlagBitValue));
             }
         }
@@ -192,13 +192,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetBit(3);
+            return _statusRegisterService.GetBit(PICConstants.PD_BIT);
         }
         set
         {
-            if (_statusRegisterService.GetBit(3) != value)
+            if (_statusRegisterService.GetBit(PICConstants.PD_BIT) != value)
             {
-                _statusRegisterService.SetBit(3);
+                _statusRegisterService.SetBit(PICConstants.PD_BIT);
                 OnPropertyChanged(nameof(PDFlagBitValue));
             }
         }
@@ -208,13 +208,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetBit(4);
+            return _statusRegisterService.GetBit(PICConstants.TO_BIT);
         }
         set
         {
-            if (_statusRegisterService.GetBit(4) != value)
+            if (_statusRegisterService.GetBit(PICConstants.TO_BIT) != value)
             {
-                _statusRegisterService.SetBit(4);
+                _statusRegisterService.SetBit(PICConstants.TO_BIT);
                 OnPropertyChanged(nameof(TOFlagBitValue));
             }
         }
@@ -224,13 +224,13 @@ public class DataRegisterViewModel : ViewModelBase
     {
         get
         {
-            return _statusRegisterService.GetBit(5);
+            return _statusRegisterService.GetBit(PICConstants.RP0_BIT);
         }
         set
         {
-            if (_statusRegisterService.GetBit(5) != value)
+            if (_statusRegisterService.GetBit(PICConstants.RP0_BIT) != value)
             {
-                _statusRegisterService.SetBit(5);
+                _statusRegisterService.SetBit(PICConstants.RP0_BIT);
                 OnPropertyChanged(nameof(RP0BitValue));
             }
         }
