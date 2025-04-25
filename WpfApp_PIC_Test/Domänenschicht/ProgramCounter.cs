@@ -28,16 +28,22 @@ namespace WpfApp_PIC.Domänenschicht
             _programcounter = 0;
         }
 
+        #region Increment ProgramCounter
         public void IncreaseProgramCounter()
         {
-            if (_programmCounterExternSet)
+            if (IsExternSet())
             {
-                _programmCounterExternSet = false;
-                _programcounter++;
+                ResetExternSetFlag();
             }
-            else
-                _programcounter++;
+            IncrementCounter();
         }
+
+        private bool IsExternSet() => _programmCounterExternSet;
+
+        private void ResetExternSetFlag() => _programmCounterExternSet = false;
+
+        private void IncrementCounter() => _programcounter++;
+        #endregion
 
         public void SetProgrammCounter(int newValue)
         {
