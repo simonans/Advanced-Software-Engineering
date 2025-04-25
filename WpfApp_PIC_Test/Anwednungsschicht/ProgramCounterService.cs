@@ -24,26 +24,6 @@ namespace WpfApp_PIC.Anwednungsschicht
             _pclathRegisterService = pclathRegisterService;
         }
 
-        /*public void PCLUpdate(int value)
-        {
-            int tmp = _programcounter.GetProgramCounter();
-            tmp &= 0xFF00;  //Set Lowbyte to zero
-            value &= 0xFF;
-            tmp |= value;
-            _programcounter.SetProgrammCounter(tmp);
-            OnValueChanged();
-        }
-
-        public void PCLATHUpdate(int value)
-        {
-            int tmp = _programcounter.GetProgramCounter();
-            tmp &= 0xE0FF;  //Set Upper Five Bits to zero
-            value = value << 8;
-            tmp |= value;
-            _programcounter.SetProgrammCounter(tmp);
-            OnValueChanged();
-        }*/
-
         public int GetPC()
         {
             return _programcounter.GetProgramCounter();
