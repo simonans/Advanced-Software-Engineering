@@ -13,9 +13,8 @@ namespace WpfApp_PIC.Domänenschicht
     {
         private int[] _register;
         private int[] _bank1;
-        /*private IProgrammCounterUpdate _programmCounterUpdate;*/
 
-        public DataRegister(/*IProgrammCounterUpdate programmCounterUpdate*/)
+        public DataRegister()
         {
             _register = new int[PICConstants.NUMBER_OF_REGISTERS];
             _bank1 = new int[PICConstants.NUMBER_OF_SPECIAL_FUNCTION_REGISTERS];
@@ -29,8 +28,6 @@ namespace WpfApp_PIC.Domänenschicht
             _bank1[PICConstants.TRISA_REGISTER_ADDR] = 31;   
             _bank1[PICConstants.TRISB_REGISTER_ADDR] = 255; 
             _bank1[PICConstants.EECON1_REGISTER_ADDR] = 0;     
-
-            /*_programmCounterUpdate = programmCounterUpdate;*/
         }
 
 
