@@ -6,25 +6,19 @@ using System.Threading.Tasks;
 
 namespace WpfApp_PIC.Domänenschicht;
 
-public class ProgramMemory
+public class ProgramMemory : SimpleStorage
 {
-    private int[] _register;
+    private const int PROGRAM_MEMORY_SIZE = 1024;
     private int _numberOfValuesInRegister;
 
-    public ProgramMemory()
+    public ProgramMemory() : base(PROGRAM_MEMORY_SIZE)
     {
-        _register = new int[1024];
         _numberOfValuesInRegister = 0;
     }
 
-    public int GetValue(int index)
+    public override void SetValue(int index, int value)
     {
-        return _register[index];
-    }
-
-    public void SetValue(int index, int value)
-    {
-        _register[index] = value;
+        base.SetValue(index, value);
         _numberOfValuesInRegister++;
     }
 
@@ -32,6 +26,4 @@ public class ProgramMemory
     {
         return _numberOfValuesInRegister;
     }
-
-
 }

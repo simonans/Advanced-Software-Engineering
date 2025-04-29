@@ -9,15 +9,15 @@ using System.Windows.Markup;
 
 namespace WpfApp_PIC.Domänenschicht
 {
-    public class DataRegister
+    public class DataRegister : SimpleStorage
     {
-        private int[] _register;
+        private const int DATA_REGISTER_SIZE = 256;
+        private const int NUMBER_OF_SPECIAL_FUNCTION_REGISTERS = 12;
         private int[] _bank1;
 
-        public DataRegister()
+        public DataRegister() : base(DATA_REGISTER_SIZE) 
         {
-            _register = new int[PICConstants.NUMBER_OF_REGISTERS];
-            _bank1 = new int[PICConstants.NUMBER_OF_SPECIAL_FUNCTION_REGISTERS];
+            _bank1 = new int[NUMBER_OF_SPECIAL_FUNCTION_REGISTERS];
 
             //Startwerte:
             _register[PICConstants.PCL_REGISTER_ADDR] = 0; _bank1[PICConstants.PCL_REGISTER_ADDR] = 0;
@@ -31,7 +31,7 @@ namespace WpfApp_PIC.Domänenschicht
         }
 
 
-        public int GetValue(int index)
+        public override int GetValue(int index)
         {
             if (index == PICConstants.INTCON_REGISTER_ADDR) 
             {
@@ -54,7 +54,7 @@ namespace WpfApp_PIC.Domänenschicht
         {
             return _bank1[index];
         }
-        public void SetValue(int index, int value)
+        public override void SetValue(int index, int value)
         {
             if (DifferentStorageOnBank1(index) && WritingOnBank1()) //nur auf Bank1 schreiben
                 _bank1[index] = value;
@@ -64,7 +64,7 @@ namespace WpfApp_PIC.Domänenschicht
             {
                 _register[index] = value;
 
-                if (index < PICConstants.NUMBER_OF_SPECIAL_FUNCTION_REGISTERS)
+                if (index < NUMBER_OF_SPECIAL_FUNCTION_REGISTERS)
                 {
                     _bank1[index] = value;
                     HandleSpecialRegister(index, value);

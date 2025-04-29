@@ -8,9 +8,6 @@ namespace WpfApp_PIC.Domänenschicht
 {
     static class PICConstants
     {
-        public const int NUMBER_OF_REGISTERS = 256;
-        public const int NUMBER_OF_SPECIAL_FUNCTION_REGISTERS = 12;
-
         //Bank0
         public const int INDIRECT_REGISTER_ADDR = 0;
         public const int TMR0_REGISTER_ADDR = 1;
