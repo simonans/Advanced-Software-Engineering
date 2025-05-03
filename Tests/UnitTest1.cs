@@ -3,6 +3,7 @@ using WpfApp_PIC.Anwednungsschicht.DatenspeicherService;
 using Moq;
 using WpfApp_PIC.Anwendungsschicht.Parser;
 using WpfApp_PIC.Pluginschicht.LST_File_Reader;
+using WpfApp_PIC.Adapterschicht.Parser;
 
 namespace Tests;
 
@@ -89,7 +90,8 @@ namespace Tests;
 
             // Assert
             Assert.Equal(31, value); // Annahme: Bank1 ist initial auf 31 im TRISA-Register gesetzt
-        }
+        } 
+        
     }
 #endregion
 
@@ -138,7 +140,33 @@ namespace Tests;
         Assert.NotNull(values);
         Assert.Equal(12, values.Length); // Annahme: Bank1 hat 128 Werte
     }
+
+        [Fact]
+        public void ParserReadLSTFileAndWriteInProgramMemory()
+    {
+        // Arrange
+        var mockReader = new Mock<ILST_File_Reader>();
+        var programMemory = new ProgramMemory();
+
+        // Setup mit Callback
+        mockReader.Setup(r => r.ReadFile(It.IsAny<string>(), It.IsAny<ProgramMemory>()))
+                  .Callback<string, ProgramMemory>((filePath, mem) =>
+                  {
+                      mem.SetValue(0x0001, 0x1234); // Simuliere Schreibvorgang im Mock
+                  });
+
+        var parser = new Parser(mockReader.Object);
+
+        // Act
+        parser.ReadLstFile("test.lst", programMemory);  //The LST file name doesn't matter in the unit test
+                                                        //since the lst file reader is mocked
+
+        // Assert
+        Assert.Equal(0x1234, programMemory.GetValue(0x0001));
+
+
     }
+}
     #endregion
 
     #region Adapterschicht
@@ -147,20 +175,6 @@ namespace Tests;
     #region Pluginschicht
     public class LSTFileReaderTests
     {
-        [Fact] /*used Mock*/
-        public void ReadFile_ShouldCallReadFileMethod()
-        {
-            // Arrange
-            var mockReader = new Mock<ILST_File_Reader>();
-            var programMemory = new ProgramMemory();
-
-            // Act
-            mockReader.Object.ReadFile("test.lst", programMemory);
-
-            // Assert
-            mockReader.Verify(reader => reader.ReadFile("test.lst", programMemory), Times.Once);
-        }
-
         [Fact]
         public void ReadFile_ShouldHandleNonWhiteSpaceLines()
         {
