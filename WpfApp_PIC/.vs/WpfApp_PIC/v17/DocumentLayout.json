@@ -1,16 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\",
+  "WorkspaceRootPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{18A42B1D-DC0D-4688-BFB1-852DEBB21638}|..\\Tests\\Tests.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\dom\u00E4nenschicht\\programcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic\\dom\u00E4nenschicht\\programcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:dom\u00E4nenschicht\\programcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic_test\\anwednungsschicht\\programcounterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|d:\\git\\source\\repos\\advanced-software-engineering\\wpfapp_pic\\anwednungsschicht\\programcounterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EAEA4C1-6533-4357-AB57-DA4C4B9C095E}|WpfApp_PIC.csproj|solutionrelative:anwednungsschicht\\programcounterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -31,7 +31,7 @@
               "RelativeDocumentMoniker": "..\\Tests\\UnitTest1.cs",
               "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\Tests\\UnitTest1.cs",
               "RelativeToolTip": "..\\Tests\\UnitTest1.cs",
-              "ViewState": "AgIAAKwAAAAAAAAAAAAIwKsAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T14:58:24.885Z",
               "EditorCaption": ""
@@ -40,11 +40,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ProgramCounter.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht\\ProgramCounter.cs",
+              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\Dom\u00E4nenschicht\\ProgramCounter.cs",
               "RelativeDocumentMoniker": "Dom\u00E4nenschicht\\ProgramCounter.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Dom\u00E4nenschicht\\ProgramCounter.cs",
+              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\Dom\u00E4nenschicht\\ProgramCounter.cs",
               "RelativeToolTip": "Dom\u00E4nenschicht\\ProgramCounter.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowCIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T12:28:59.829Z"
             },
@@ -52,9 +52,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ProgramCounterService.cs",
-              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht\\ProgramCounterService.cs",
+              "DocumentMoniker": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\Anwednungsschicht\\ProgramCounterService.cs",
               "RelativeDocumentMoniker": "Anwednungsschicht\\ProgramCounterService.cs",
-              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\Anwednungsschicht\\ProgramCounterService.cs",
+              "ToolTip": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\Anwednungsschicht\\ProgramCounterService.cs",
               "RelativeToolTip": "Anwednungsschicht\\ProgramCounterService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

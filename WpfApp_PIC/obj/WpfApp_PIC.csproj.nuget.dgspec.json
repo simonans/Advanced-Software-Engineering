@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj": {}
+    "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\WpfApp_PIC.csproj": {}
   },
   "projects": {
-    "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj": {
+    "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\WpfApp_PIC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
+        "projectUniqueName": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\WpfApp_PIC.csproj",
         "projectName": "WpfApp_PIC",
-        "projectPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\WpfApp_PIC.csproj",
+        "projectPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\WpfApp_PIC.csproj",
         "packagesPath": "C:\\Users\\Mario\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC_Test\\obj\\",
+        "outputPath": "D:\\Git\\source\\repos\\Advanced-Software-Engineering\\WpfApp_PIC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

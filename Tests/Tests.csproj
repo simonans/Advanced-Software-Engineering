@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WpfApp_PIC\WpfApp_PIC.csproj" />
     <ProjectReference Include="..\WpfApp_PIC_Test\WpfApp_PIC.csproj" />
   </ItemGroup>
 
